@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2c5a45" />
+
+    <!-- title + description are baked per-route at build by react-helmet-async
+         (MetaTags). No static fallback here to avoid duplicate tags. -->
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Site-wide entity layer (site-standard §3). Organization + LocalBusiness
+         (AssistedLivingFacility) with the full sameAs array. Per-page Service /
+         FAQPage / etc. schema is injected by MetaTags on top of this. Fill in the
+         sameAs URLs as the Google Business Profile / Wikidata item are created. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["AssistedLivingFacility", "LocalBusiness"],
+      "name": "Pine Haven Assisted Living",
+      "description": "Family-owned assisted living, memory care, and respite care in Hemlock, Michigan — six-bedroom residential homes with a registered nurse on staff, home-cooked meals, and on-site companion animals.",
+      "url": "https://pinehavenassistedliving.com",
+      "telephone": "+1-989-295-6632",
+      "email": "pinehavenassistedliving@gmail.com",
+      "priceRange": "$$",
+      "image": "https://pinehavenassistedliving.com/images/home-1.jpg",
+      "logo": "https://pinehavenassistedliving.com/logo.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "555 N Brennan Rd",
+        "addressLocality": "Hemlock",
+        "addressRegion": "MI",
+        "postalCode": "48626",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.4119,
+        "longitude": -84.2289
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Hemlock" },
+        { "@type": "City", "name": "Saginaw" },
+        { "@type": "City", "name": "Midland" },
+        { "@type": "City", "name": "Bay City" },
+        { "@type": "City", "name": "Merrill" }
+      ],
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Consent Mode v2 — defaults set BEFORE any tag loads. Everything is
+         denied until the visitor opts in; CookieConsent calls gtag('consent',
+         'update', ...) on accept. Denied state still sends cookieless pings. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+    </script>
+
+    <!-- Analytics/ads loader. GTM does NOT fire until the visitor accepts.
+         CookieConsent calls window.phLoadGTM() on accept; returning consenters
+         auto-load. GA4 / Meta Pixel + CAPI / Google Ads are configured in the
+         GTM UI off the dataLayer events — no code change to add them. Set
+         GTM_ID when a container is provisioned. -->
+    <script>
+      window.phLoadGTM = function () {
+        if (window._phGtmLoaded) return;
+        var GTM_ID = '';
+        if (!GTM_ID) return;
+        window._phGtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', GTM_ID);
+      };
+      if (document.cookie.indexOf('ph_cookie_consent=accepted') !== -1) { window.phLoadGTM(); }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

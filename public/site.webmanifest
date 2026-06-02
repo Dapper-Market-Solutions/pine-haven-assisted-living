@@ -1,0 +1,13 @@
+{
+  "name": "Pine Haven Assisted Living",
+  "short_name": "Pine Haven",
+  "description": "Assisted living, memory care, and respite care in Hemlock, MI — warm, six-bedroom homes with a registered nurse on staff. Serving Saginaw, Midland & Bay City.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ea",
+  "theme_color": "#2c5a45",
+  "icons": [
+    { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

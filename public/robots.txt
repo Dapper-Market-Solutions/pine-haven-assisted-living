@@ -1,0 +1,33 @@
+# Pine Haven Assisted Living — crawl + AI policy (DMS site-standard §1)
+# Default: allow everything except the API.
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# --- AI citation / answer engines: explicitly allowed (we WANT to be cited) ---
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# --- Search engines ---
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# --- Scrapers with no citation value: blocked ---
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://pinehavenassistedliving.com/sitemap.xml
