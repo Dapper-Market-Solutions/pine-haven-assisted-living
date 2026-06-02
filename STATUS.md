@@ -28,6 +28,9 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 - ~~Confirm phone~~ — **UPDATED 2026-06-02: phone changed to (989) 642-5761** (replaced the earlier
   (989) 295-6632 across schema, site.js, notify.js, index.html). Keep this number.
 - **RESEND_API_KEY** must be set in the Vercel project for the contact form to send.
+- **LEAD_CC** (2026-06-02) — `api/lead.js` now CCs `LEAD_CC` (comma-separated) on the ops
+  notification. **Set `LEAD_CC=deepak@dapperms.com` (Production) in Vercel + redeploy** to make
+  it take effect. Smoke test 2026-06-02 returned `{ok:true}` (ops→gmail, ack→submitter).
 - **Domain cutover** — point pinehavenassistedliving.com at this Vercel project once verified, THEN
   delete the old WordPress site (which also kills its injected SEO-spam).
 
