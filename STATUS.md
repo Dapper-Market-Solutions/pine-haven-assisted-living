@@ -7,9 +7,11 @@ site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tail
 SSG via `vite-react-ssg`, deployed to Vercel.
 
 ## Current state
-- **Built and verified locally.** `npm run build` prerenders 14 static pages; all routes return 200;
-  mobile (375px) verified clean, no overflow.
-- Not yet pushed to GitHub or deployed to Vercel (pending owner sign-off + address confirmation).
+- **Built, verified, and pushed to GitHub** (`Dapper-Market-Solutions/pine-haven-assisted-living`, main).
+  `npm run build` prerenders 14 static pages; all routes return 200; mobile (375px) verified clean.
+- **Not yet imported into Vercel.** Next step: import the repo at vercel.com (team
+  dapper-market-solutions-projects), framework auto-detects as Vite, set `RESEND_API_KEY`, deploy.
+  Repo root IS the app (no monorepo subdir), so Vercel Root Directory = `.`.
 - Old WordPress site is still live and should NOT be deleted until the new site is verified live on
   the real domain.
 
