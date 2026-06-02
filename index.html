@@ -60,6 +60,14 @@
     }
     </script>
 
+    <!-- AudienceLab Website Visitor ID — loads OUTSIDE the cookie consent gate
+         per site-standard §7b. WVID's value depends on identifying as many
+         anonymous visitors as possible; consent-gating it would kill ~70% of
+         the yield. US-only legitimate-interest classification with disclosure
+         in the Privacy Policy ("Website Visitor Identification" section).
+         Geo-fence or gate if EU/UK traffic is added later. -->
+    <script src="https://cdn.idpixel.app/v1/idp-analytics-6a1e56affab915af2e99d3a9.min.js" defer></script>
+
     <!-- Consent Mode v2 — defaults set BEFORE any tag loads. Everything is
          denied until the visitor opts in; CookieConsent calls gtag('consent',
          'update', ...) on accept. Denied state still sends cookieless pings. -->

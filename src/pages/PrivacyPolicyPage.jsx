@@ -62,6 +62,14 @@ const PrivacyPolicyPage = () => {
                 <a href="/cookies" className="text-primary hover:underline">Cookie Policy</a> for details.
               </p>
 
+              <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">Website Visitor Identification</h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                When you visit our website, we use a third-party identity-resolution service (AudienceLab) to help us understand who is interested in our community so we can follow up with helpful information about Pine Haven. This service collects your activity on our site and may match certain signals (such as a hashed email address or device identifiers) to identify you. This is separate from any information you provide directly through our contact form. If you do not wish to be identified or contacted through this process, email{' '}
+                <a href={NAP.emailHref} className="text-primary hover:underline">{NAP.email}</a>{' '}
+                to request removal, or see the FTC&rsquo;s consumer guidance at{' '}
+                <a href="https://consumer.ftc.gov/unwanted-calls-emails-texts" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">consumer.ftc.gov/unwanted-calls-emails-texts</a>.
+              </p>
+
               <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">Telephone &amp; Text Communications</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 When you provide a phone number, you may receive calls or text messages related to your inquiry. Any such outreach complies with the Telephone Consumer Protection Act (TCPA) and the regulations of the FTC and FCC, including the{' '}
