@@ -34,8 +34,20 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 - **Domain cutover** — point pinehavenassistedliving.com at this Vercel project once verified, THEN
   delete the old WordPress site (which also kills its injected SEO-spam).
 
+## Content (client feedback 2026-06-02)
+- Rent: **semi-private $3,500/mo, private $3,900/mo** (`NAP.priceFrom`=$3,500 = semi-private; added
+  `priceSemiPrivate`/`pricePrivate`). Replaced old "$3,300" everywhere + enriched cost FAQs.
+- Staff: now **"registered nurse and LPNs on staff"** across pages (was RN-only).
+- Insurance: long-term care insurance **+ Medicaid waiver** (added waiver everywhere LTC was mentioned).
+- Companion animals: **alpacas, a llama, sheep, goats, and chickens** (dropped "cats" per client's list —
+  re-add if they actually have cats).
+- Capacity: **state-licensed for 18 residents** (`NAP.licensedFor`=18); surfaced on Home + highlights + llms.txt.
+- Also fixed: llms.txt still had the OLD phone (989) 295-6632 → now (989) 642-5761.
+
 ## ⚠️ Open items before launch
-1. ~~Confirm street address~~ — **DONE 2026-06-01: confirmed 515 Brennan Rd, Hemlock, MI 48626.**
+1. ~~Confirm street address~~ — **CORRECTED 2026-06-02 (client): 515 N Brennan Rd, Hemlock, MI 48626**
+   (added the "N"; supersedes the 2026-06-01 "515 Brennan Rd"). Updated in site.js, index.html schema,
+   llms.txt, notify.js. ⚠️ Re-check NAP consistency on GBP/Google Maps + USPS so they match the "N".
 2. **Verify the geo coordinates** in `index.html` / `site.js` (approximate Hemlock lat/lng right now).
 3. **RESEND_API_KEY** must be set in Vercel for the contact form to send. Optionally set
    `OPS_TEAM_EMAIL` (defaults to pinehavenassistedliving@gmail.com) and `EMAIL_FROM` once a Pine Haven

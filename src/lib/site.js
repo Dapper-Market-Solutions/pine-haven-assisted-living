@@ -13,9 +13,10 @@ export const NAP = {
   phoneHref: 'tel:+19896425761',
   email: 'pinehavenassistedliving@gmail.com',
   emailHref: 'mailto:pinehavenassistedliving@gmail.com',
-  // Address confirmed by the owner as 515 Brennan Rd (2026-06-01). The old WP
-  // site's contact page had the wrong "555 N Brennan Rd"; this is the truth.
-  street: '515 Brennan Rd',
+  // Address per the owner: 515 N Brennan Rd (corrected 2026-06-02 to add the "N";
+  // supersedes the 2026-06-01 "515 Brennan Rd" note). The old WP site's
+  // "555 N Brennan Rd" had the wrong house number.
+  street: '515 N Brennan Rd',
   city: 'Hemlock',
   state: 'MI',
   stateLong: 'Michigan',
@@ -23,10 +24,15 @@ export const NAP = {
   get addressLine() {
     return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
   },
-  mapQuery: '515 Brennan Rd, Hemlock, MI 48626',
+  mapQuery: '515 N Brennan Rd, Hemlock, MI 48626',
   hours: '24 hours a day, 365 days a year',
   geo: { lat: 43.4119, lng: -84.2289 }, // Hemlock, MI — refine if needed
-  priceFrom: '$3,300',
+  // Monthly rent (owner, 2026-06-02): semi-private $3,500, private $3,900.
+  // priceFrom drives all "Rent from $X/mo" copy — keep it = the semi-private rate.
+  priceFrom: '$3,500',
+  priceSemiPrivate: '$3,500',
+  pricePrivate: '$3,900',
+  licensedFor: 18,
 };
 
 // Social / review profiles. Mirror any non-empty URL here into the `sameAs`
@@ -93,10 +99,10 @@ export const TESTIMONIALS = [
 
 // The differentiators that actually sell Pine Haven — used on Home + service pages.
 export const HIGHLIGHTS = [
-  { title: 'On-site companion animals', body: 'Alpacas, cats, and chickens that residents help care for and love.' },
-  { title: 'Registered Nurse on staff', body: 'Clinical oversight on site — not just visiting aides.' },
+  { title: 'On-site companion animals', body: 'Alpacas, a llama, sheep, goats, and chickens that residents help care for and love.' },
+  { title: 'Registered Nurse & LPNs on staff', body: 'A registered nurse and licensed practical nurses on site — not just visiting aides.' },
   { title: 'Home-cooked meals', body: 'Three fresh, made-from-scratch meals served family-style every day.' },
-  { title: 'Rent from ' + NAP.priceFrom + '/mo', body: 'Transparent pricing, with financial assistance available for those who qualify.' },
-  { title: 'Six-bedroom residential homes', body: 'A real house with a handful of neighbors — never an institution.' },
-  { title: 'Long-term care insurance', body: 'We streamline the long-term care insurance acceptance process for families.' },
+  { title: 'Rent from ' + NAP.priceFrom + '/mo', body: `Semi-private rooms ${NAP.priceSemiPrivate}/mo, private rooms ${NAP.pricePrivate}/mo — financial assistance available for those who qualify.` },
+  { title: 'State-licensed for 18 residents', body: 'Small, six-bedroom residential homes — a real house with a handful of neighbors, never an institution.' },
+  { title: 'Insurance & Medicaid waiver', body: 'We streamline long-term care insurance and accept the Medicaid waiver.' },
 ];

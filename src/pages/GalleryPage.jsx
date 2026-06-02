@@ -11,7 +11,7 @@ const GalleryPage = () => (
   <>
     <MetaTags
       title="Photo Gallery"
-      description="See Pine Haven Assisted Living in Hemlock, MI — our six-bedroom homes, warm common spaces, country grounds, and the on-site alpacas, cats, and chickens that residents love."
+      description="See Pine Haven Assisted Living in Hemlock, MI — our six-bedroom homes, warm common spaces, country grounds, and the on-site alpacas, goats, and farm animals residents love."
       jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Photo Gallery', path: '/gallery' }])}
     />
     <Header />

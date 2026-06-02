@@ -22,7 +22,7 @@ const RespiteCarePage = () => (
         image: '/images/facility-8.jpg',
         imageAlt: 'Companion animals and warm surroundings at Pine Haven',
         body: [
-          'Respite guests receive the full Pine Haven experience: personal care, light housekeeping, meal preparation, medication support, and help with shopping and daily tasks. A registered nurse on staff oversees care, so even a short stay comes with real clinical oversight.',
+          'Respite guests receive the full Pine Haven experience: personal care, light housekeeping, meal preparation, medication support, and help with shopping and daily tasks. A registered nurse and LPNs on staff oversee care, so even a short stay comes with real clinical oversight.',
           'It’s also a wonderful, no-pressure way to experience Pine Haven first-hand. Many families use a respite stay to see how their loved one settles in before considering longer-term assisted living or memory care.',
         ],
       },
@@ -45,7 +45,7 @@ const RespiteCarePage = () => (
         'Light housekeeping',
         'Meal preparation',
         'Help with shopping & errands',
-        'Registered nurse on staff',
+        'Registered nurse & LPNs on staff',
         'Daily activities & companionship',
         'On-site companion animals',
         '24-hour staff support',

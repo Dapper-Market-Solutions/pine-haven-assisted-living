@@ -23,7 +23,7 @@ const AssistedLivingPage = () => (
         imageAlt: 'A bright, comfortable common room at Pine Haven Assisted Living',
         body: [
           'Some days call for a little help; some days call for more. Our caregivers assist with bathing, dressing, grooming, mobility, and other activities of daily living — always at the resident’s pace and always with respect.',
-          'A registered nurse on staff oversees medication management and coordinates with each resident’s physicians, so families have real clinical peace of mind. Emergency call systems in every room mean help is never more than a moment away, around the clock.',
+          'A registered nurse and LPNs on staff oversee medication management and coordinate with each resident’s physicians, so families have real clinical peace of mind. Emergency call systems in every room mean help is never more than a moment away, around the clock.',
         ],
       },
       {
@@ -32,7 +32,7 @@ const AssistedLivingPage = () => (
         imageAlt: 'Sun-filled gathering space at Pine Haven',
         body: [
           'Staying mentally, socially, and physically active is what keeps people well. Pine Haven plans daily activities, games, hobby programs, and Bible study, and our sun-filled courtyards and patios invite residents outdoors in good weather.',
-          'And then there are the alpacas. Our on-site companion animals — alpacas, cats, and chickens — give residents something to look forward to, someone to care for, and a daily dose of the calm that only animals seem to bring.',
+          'And then there are the alpacas. Our on-site companion animals — alpacas, a llama, sheep, goats, and chickens — give residents something to look forward to, someone to care for, and a daily dose of the calm that only animals seem to bring.',
         ],
       },
     ]}
@@ -56,15 +56,15 @@ const AssistedLivingPage = () => (
     faqs={[
       {
         q: 'What is the difference between assisted living and a nursing home?',
-        a: 'Assisted living is for older adults who need help with daily activities — like meals, medication, bathing, and housekeeping — but do not require round-the-clock skilled nursing or medical care. Pine Haven offers a homelike assisted living setting with a registered nurse on staff, rather than the clinical environment of a nursing home.',
+        a: 'Assisted living is for older adults who need help with daily activities — like meals, medication, bathing, and housekeeping — but do not require round-the-clock skilled nursing or medical care. Pine Haven offers a homelike assisted living setting with a registered nurse and LPNs on staff, rather than the clinical environment of a nursing home.',
       },
       {
         q: 'How much does assisted living cost at Pine Haven?',
-        a: `Monthly rent starts at ${NAP.priceFrom}, which includes housing, meals, utilities, housekeeping, and daily care. Financial assistance is available for those who qualify, and we streamline the long-term care insurance acceptance process. Call ${NAP.phone} for a personalized quote.`,
+        a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month — including housing, meals, utilities, housekeeping, and daily care. Financial assistance is available for those who qualify, and we streamline long-term care insurance and accept the Medicaid waiver. Call ${NAP.phone} for a personalized quote.`,
       },
       {
-        q: 'Does Pine Haven accept long-term care insurance?',
-        a: 'Yes. We work with families to streamline the long-term care insurance acceptance process so coverage can be applied toward the cost of care.',
+        q: 'Does Pine Haven accept long-term care insurance or Medicaid?',
+        a: 'Yes. We work with families to streamline the long-term care insurance acceptance process, and we accept the Medicaid waiver, so coverage can be applied toward the cost of care.',
       },
       {
         q: 'Can residents bring their own furniture and belongings?',

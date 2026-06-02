@@ -23,14 +23,14 @@ const MemoryCarePage = () => (
         imageAlt: 'Pine Haven’s on-site alpacas, part of the home’s calming environment',
         body: [
           'No two people experience dementia the same way, so we don’t treat them the same way. Our caregivers learn each resident’s history, preferences, and the rhythms of their day, then build care around them — from how they like to be woken to which activities bring them comfort.',
-          'A registered nurse on staff oversees medications and watches closely for the changes that matter in progressive conditions, coordinating with physicians and keeping families informed every step of the way.',
+          'A registered nurse and LPNs on staff oversee medications and watch closely for the changes that matter in progressive conditions, coordinating with physicians and keeping families informed every step of the way.',
         ],
       },
       {
         heading: 'A calm, secure environment that lowers anxiety',
         body: [
           'Predictability soothes. Familiar meals served at familiar times, a consistent daily structure, and a small, home-scale setting all work together to reduce the agitation and disorientation that come with memory loss.',
-          'Our companion animals play a real role here, too. Time spent with the alpacas, cats, and chickens is calming and grounding — a simple, wordless source of joy that reaches residents even on harder days.',
+          'Our companion animals play a real role here, too. Time spent with the alpacas, llama, sheep, goats, and chickens is calming and grounding — a simple, wordless source of joy that reaches residents even on harder days.',
         ],
       },
     ]}
@@ -40,7 +40,7 @@ const MemoryCarePage = () => (
         'Care for Alzheimer’s & all dementias',
         'Frontotemporal & Lewy Body Dementia',
         'Consistent caregivers & daily routine',
-        'Registered nurse on staff',
+        'Registered nurse & LPNs on staff',
         'Medication management & monitoring',
         'Calm, home-scale environment',
         'Structured, meaningful activities',
@@ -66,7 +66,7 @@ const MemoryCarePage = () => (
       },
       {
         q: 'How much does memory care cost?',
-        a: `Cost depends on the level of care your loved one needs. Rent starts at ${NAP.priceFrom} per month, financial assistance is available for those who qualify, and we help families apply long-term care insurance. Call ${NAP.phone} for a personalized quote.`,
+        a: `Cost depends on the level of care your loved one needs. Semi-private rooms start at ${NAP.priceSemiPrivate} per month and private rooms at ${NAP.pricePrivate} per month, financial assistance is available for those who qualify, and we help families apply long-term care insurance and accept the Medicaid waiver. Call ${NAP.phone} for a personalized quote.`,
       },
     ]}
     related={[

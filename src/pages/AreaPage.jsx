@@ -26,11 +26,11 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     },
     {
       q: `What kinds of senior care does Pine Haven offer ${city} families?`,
-      a: 'We offer assisted living, memory care for dementia and Alzheimer’s, and short-term respite care, all within small six-bedroom homes with a registered nurse on staff and home-cooked meals.',
+      a: 'We offer assisted living, memory care for dementia and Alzheimer’s, and short-term respite care, all within small six-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.',
     },
     {
       q: `How much does assisted living near ${city} cost at Pine Haven?`,
-      a: `Monthly rent starts at ${NAP.priceFrom}, with financial assistance available for those who qualify, plus help applying long-term care insurance. Call ${NAP.phone} for a quote based on your loved one’s needs.`,
+      a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also help families apply long-term care insurance and accept the Medicaid waiver. Call ${NAP.phone} for a quote based on your loved one’s needs.`,
     },
   ];
 
@@ -71,7 +71,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
               When a parent or spouse from {city} needs more care than home can provide, the last thing most families want is a big, impersonal facility. Pine Haven is the alternative: a real, six-bedroom home in the country, {distance} {city}, where your loved one is known by name.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              With a registered nurse on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn’t possible at larger places — all just a short drive from {city}.
+              With a registered nurse and LPNs on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn’t possible at larger places — all just a short drive from {city}.
             </p>
           </div>
         </section>
@@ -101,9 +101,9 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
             <ul className="space-y-3">
               {[
                 'A small, six-bedroom home — never a crowded institution',
-                'Registered nurse on staff for real clinical oversight',
+                'Registered nurse & LPNs on staff for real clinical oversight',
                 'Home-cooked meals served family-style every day',
-                'On-site alpacas, cats, and chickens residents adore',
+                'On-site alpacas, a llama, sheep, goats, and chickens residents adore',
                 `Rent from ${NAP.priceFrom}/mo with financial assistance available`,
                 'A quiet country setting that’s still an easy drive for visits',
               ].map((p) => (

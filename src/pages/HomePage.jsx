@@ -13,12 +13,12 @@ import { NAP, TESTIMONIALS, GALLERY } from '@/lib/site';
 import { faqSchema } from '@/lib/schema';
 
 const highlights = [
-  { icon: PawPrint, title: 'Companion animals on site', body: 'Alpacas, cats, and chickens residents help care for and love every day.' },
-  { icon: Stethoscope, title: 'Registered Nurse on staff', body: 'Real clinical oversight on site — not just visiting aides.' },
+  { icon: PawPrint, title: 'Companion animals on site', body: 'Alpacas, a llama, sheep, goats, and chickens residents help care for and love every day.' },
+  { icon: Stethoscope, title: 'Registered Nurse & LPNs on staff', body: 'A registered nurse and licensed practical nurses on site — not just visiting aides.' },
   { icon: Utensils, title: 'Home-cooked meals', body: 'Three fresh, made-from-scratch meals served family-style each day.' },
-  { icon: DollarSign, title: `Rent from ${NAP.priceFrom}/mo`, body: 'Transparent pricing, with financial assistance available for those who qualify.' },
-  { icon: HomeIcon, title: 'Six-bedroom homes', body: 'A real house with a handful of neighbors — never an institution.' },
-  { icon: ShieldCheck, title: 'Long-term care insurance', body: 'We streamline the long-term care insurance acceptance process for families.' },
+  { icon: DollarSign, title: `Rent from ${NAP.priceFrom}/mo`, body: `Semi-private rooms ${NAP.priceSemiPrivate}/mo, private rooms ${NAP.pricePrivate}/mo — financial assistance available for those who qualify.` },
+  { icon: HomeIcon, title: 'State-licensed for 18 residents', body: 'Small, six-bedroom homes — a real house with a handful of neighbors, never an institution.' },
+  { icon: ShieldCheck, title: 'Insurance & Medicaid waiver', body: 'We streamline long-term care insurance and accept the Medicaid waiver.' },
 ];
 
 const services = [
@@ -46,11 +46,11 @@ const homeFaqs = [
   },
   {
     q: 'How much does it cost to live at Pine Haven?',
-    a: `Monthly rent starts at ${NAP.priceFrom}, and financial assistance is available for those who qualify. We also streamline the long-term care insurance acceptance process. Call us at ${NAP.phone} for a personalized quote based on your loved one’s level of care.`,
+    a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also streamline long-term care insurance and accept the Medicaid waiver. Call us at ${NAP.phone} for a personalized quote based on your loved one’s level of care.`,
   },
   {
     q: 'What types of care does Pine Haven provide?',
-    a: 'We provide assisted living, memory care for dementia and Alzheimer’s, and short-term respite care — all within small, six-bedroom residential homes with a registered nurse on staff.',
+    a: 'We provide assisted living, memory care for dementia and Alzheimer’s, and short-term respite care — all within small, six-bedroom residential homes with a registered nurse and LPNs on staff.',
   },
   {
     q: 'Can we tour the home before deciding?',
@@ -85,7 +85,7 @@ const HomePage = () => {
                 Care that makes a difference in Hemlock, MI
               </h1>
               <p className="text-lg md:text-xl text-secondary-foreground/90 leading-relaxed mb-8">
-                Pine Haven is a small, family-owned assisted living and memory care home where your loved one is known by name — with a registered nurse on staff, home-cooked meals, and even alpacas in the yard.
+                Pine Haven is a small, family-owned assisted living and memory care home where your loved one is known by name — with a registered nurse and LPNs on staff, home-cooked meals, and even alpacas in the yard.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/contact">
@@ -147,10 +147,10 @@ const HomePage = () => {
                   Tucked into a beautiful, quiet country setting just outside Saginaw, Pine Haven is built around a simple idea: older adults deserve to live well, happy, and safe — with as much independence as possible and all the support they need.
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground mb-6">
-                  Our six-bedroom homes mean your loved one is never lost in a crowd. Staff and residents genuinely know each other. There are home-cooked meals, familiar faces, and yes — alpacas, cats, and chickens to brighten every day.
+                  Our six-bedroom homes mean your loved one is never lost in a crowd. Staff and residents genuinely know each other. There are home-cooked meals, familiar faces, and yes — alpacas, a llama, sheep, goats, and chickens to brighten every day.
                 </p>
                 <ul className="space-y-2">
-                  {['Family-centered, person-first care', 'Registered nurse on staff', 'Independence with the right level of support'].map((p) => (
+                  {['Family-centered, person-first care', 'Registered nurse & LPNs on staff', 'Independence with the right level of support'].map((p) => (
                     <li key={p} className="flex items-center gap-3 text-base text-foreground">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" /> {p}
                     </li>
