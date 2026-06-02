@@ -1,10 +1,9 @@
 // Shared serverless helpers for Pine Haven Assisted Living.
 // Files in api/_lib/ are NOT exposed as routes by Vercel.
 //
-// Reuses the shared DMS Resend account via RESEND_API_KEY. Until the Pine Haven
-// domain is verified in Resend, the sender falls back to mail.dapperms.com. Set
-// EMAIL_FROM in Vercel once pinehavenassistedliving.com (or a subdomain) is
-// verified.
+// Reuses the shared DMS Resend account via RESEND_API_KEY. Sends from the
+// verified Pine Haven subdomain web.pinehavenassistedliving.com. Override with
+// EMAIL_FROM in Vercel if the sending address ever changes.
 
 export function applyCors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -15,7 +14,7 @@ export function applyCors(res) {
 export async function sendEmail({ to, subject, html, replyTo, from }) {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) throw new Error('RESEND_API_KEY not set')
-  const fromAddress = from || process.env.EMAIL_FROM || 'Pine Haven Assisted Living <noreply@mail.dapperms.com>'
+  const fromAddress = from || process.env.EMAIL_FROM || 'Pine Haven Assisted Living <noreply@web.pinehavenassistedliving.com>'
   const resp = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },

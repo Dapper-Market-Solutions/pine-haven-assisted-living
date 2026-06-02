@@ -33,4 +33,4 @@ See `STATUS.md` for current state and the pre-launch checklist (including the un
 ## Env vars (set in Vercel)
 - `RESEND_API_KEY` (required for the contact form)
 - `OPS_TEAM_EMAIL` (optional; defaults to pinehavenassistedliving@gmail.com)
-- `EMAIL_FROM` (optional; defaults to noreply@mail.dapperms.com until a Pine Haven domain is verified)
+- `EMAIL_FROM` (optional; defaults to noreply@web.pinehavenassistedliving.com — the verified Resend sending domain)
