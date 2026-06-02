@@ -32,7 +32,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link to="/" aria-label={`${NAP.name} — home`} className="flex items-center">
-            <img src="/logo.svg" alt={NAP.name} className="h-11 w-auto md:h-14" width="300" height="72" />
+            <img src="/logo.png" alt={NAP.name} className="h-14 w-auto md:h-20" width="1170" height="762" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

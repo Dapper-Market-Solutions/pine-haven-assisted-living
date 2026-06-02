@@ -29,6 +29,13 @@ export const NAP = {
   priceFrom: '$3,300',
 };
 
+// Social / review profiles. Mirror any non-empty URL here into the `sameAs`
+// array in index.html (the entity-layer JSON-LD). Leave a value '' to hide it.
+export const SOCIALS = {
+  facebook: 'https://www.facebook.com/PineHavenSeniorAssistedLivingLLC/',
+  google: '', // Google Business Profile / Maps URL — pending from owner
+};
+
 // Communities Pine Haven draws from — drives the local pages + areaServed schema.
 export const SERVICE_AREAS = ['Hemlock', 'Saginaw', 'Midland', 'Bay City', 'Merrill'];
 

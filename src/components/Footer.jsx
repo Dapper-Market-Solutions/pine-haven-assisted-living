@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { NAP, SERVICE_AREAS } from '@/lib/site';
+import { MapPin, Phone, Mail, Clock, Facebook, Star } from 'lucide-react';
+import { NAP, SERVICE_AREAS, SOCIALS } from '@/lib/site';
 
 const Footer = () => {
   return (
@@ -9,10 +9,22 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <img src="/logo.svg" alt={NAP.name} className="h-12 w-auto brightness-0 invert mb-4" width="300" height="72" />
-            <p className="text-sm text-secondary-foreground/80 leading-relaxed max-w-xs">
+            <img src="/logo.png" alt={NAP.name} className="h-20 w-auto brightness-0 invert mb-4" width="1170" height="762" />
+            <p className="text-sm text-secondary-foreground/80 leading-relaxed max-w-xs mb-5">
               {NAP.tagline} A family-owned assisted living and memory care home in {NAP.city}, {NAP.stateLong} — 25 minutes from Saginaw.
             </p>
+            <div className="flex gap-3">
+              {SOCIALS.facebook && (
+                <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Pine Haven on Facebook" className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+              )}
+              {SOCIALS.google && (
+                <a href={SOCIALS.google} target="_blank" rel="noopener noreferrer" aria-label="Pine Haven on Google" className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                  <Star className="w-5 h-5" />
+                </a>
+              )}
+            </div>
           </div>
 
           <div>

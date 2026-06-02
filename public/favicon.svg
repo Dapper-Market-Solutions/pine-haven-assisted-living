@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pine Haven">
-  <rect width="64" height="64" rx="13" fill="#23493a"/>
-  <g fill="#f3efe4">
-    <path d="M32 9 L46 32 L38 32 L50 50 L14 50 L26 32 L18 32 Z"/>
-    <rect x="29" y="48" width="6" height="9" rx="1"/>
-  </g>
-</svg>
