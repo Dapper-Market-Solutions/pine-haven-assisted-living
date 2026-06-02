@@ -48,7 +48,9 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 1. ~~Confirm street address~~ — **CORRECTED 2026-06-02 (client): 515 N Brennan Rd, Hemlock, MI 48626**
    (added the "N"; supersedes the 2026-06-01 "515 Brennan Rd"). Updated in site.js, index.html schema,
    llms.txt, notify.js. ⚠️ Re-check NAP consistency on GBP/Google Maps + USPS so they match the "N".
-2. **Verify the geo coordinates** in `index.html` / `site.js` (approximate Hemlock lat/lng right now).
+2. ~~Verify the geo coordinates~~ — **DONE 2026-06-02: geocoded 515 N Brennan Rd to
+   43.41709, -84.24956 (Census + OSM agree to ~4 decimals); updated site.js + index.html JSON-LD.
+   Old 43.4119/-84.2289 was ~1.3 km off.**
 3. **RESEND_API_KEY** must be set in Vercel for the contact form to send. Optionally set
    `OPS_TEAM_EMAIL` (defaults to pinehavenassistedliving@gmail.com) and `EMAIL_FROM` once a Pine Haven
    sending domain is verified in Resend (falls back to mail.dapperms.com).

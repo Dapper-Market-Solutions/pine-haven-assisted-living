@@ -26,7 +26,7 @@ export const NAP = {
   },
   mapQuery: '515 N Brennan Rd, Hemlock, MI 48626',
   hours: '24 hours a day, 365 days a year',
-  geo: { lat: 43.4119, lng: -84.2289 }, // Hemlock, MI — refine if needed
+  geo: { lat: 43.41709, lng: -84.24956 }, // 515 N Brennan Rd (geocoded 2026-06-02, Census + OSM agree)
   // Monthly rent (owner, 2026-06-02): semi-private $3,500, private $3,900.
   // priceFrom drives all "Rent from $X/mo" copy — keep it = the semi-private rate.
   priceFrom: '$3,500',
