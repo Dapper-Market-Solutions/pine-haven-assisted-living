@@ -11,7 +11,7 @@ export function applyCors(res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 }
 
-export async function sendEmail({ to, subject, html, replyTo, from }) {
+export async function sendEmail({ to, subject, html, replyTo, from, cc }) {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) throw new Error('RESEND_API_KEY not set')
   const fromAddress = from || process.env.EMAIL_FROM || 'Pine Haven Assisted Living <noreply@web.pinehavenassistedliving.com>'
@@ -24,6 +24,7 @@ export async function sendEmail({ to, subject, html, replyTo, from }) {
       subject,
       html,
       ...(replyTo ? { reply_to: replyTo } : {}),
+      ...(cc && cc.length ? { cc } : {}),
     }),
   })
   if (!resp.ok) throw new Error(`Resend ${resp.status}: ${await resp.text()}`)

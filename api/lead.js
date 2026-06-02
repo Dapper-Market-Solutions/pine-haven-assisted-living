@@ -13,6 +13,8 @@
 //                     Pine Haven domain is verified in Resend)
 //   OPS_TEAM_EMAIL   (optional — defaults to pinehavenassistedliving@gmail.com;
 //                     comma-separated for multiple recipients)
+//   LEAD_CC          (optional — comma-separated CC list on the ops notification,
+//                     e.g. deepak@dapperms.com for oversight)
 
 import { applyCors, sendEmail, leadEmailHtml, acknowledgementEmailHtml } from './_lib/notify.js'
 
@@ -38,6 +40,7 @@ export default async function handler(req, res) {
   }
 
   const opsTo = (process.env.OPS_TEAM_EMAIL || DEFAULT_OPS).split(',').map((s) => s.trim())
+  const opsCc = (process.env.LEAD_CC || '').split(',').map((s) => s.trim()).filter(Boolean)
   const timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/Detroit' })
 
   const opsHtml = leadEmailHtml({
@@ -50,6 +53,7 @@ export default async function handler(req, res) {
   const [opsResult, ackResult] = await Promise.allSettled([
     sendEmail({
       to: opsTo,
+      cc: opsCc,
       subject: `New inquiry — ${name}${care_interest ? ` (${care_interest})` : ''}`,
       html: opsHtml,
       replyTo: email,
