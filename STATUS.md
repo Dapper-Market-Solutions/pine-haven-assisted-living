@@ -7,7 +7,11 @@ site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tail
 SSG via `vite-react-ssg`, deployed to Vercel.
 
 ## Current state
-- **LIVE on Vercel:** https://pine-haven-assisted-living.vercel.app (team dapper-market-solutions-projects,
+- **🚀 LAUNCHED on the real domain:** https://pinehavenassistedliving.com (2026-06-02). Apex serves the
+  new site, zero WordPress markers, AI crawlers + Googlebot all return 200, canonical → apex.
+- 301 redirects added for old WP slugs (/pinehaven-services→/services, /pinehaven-photos→/gallery,
+  /home-3→/, /privacy-policy→/privacy, /blog/*→/).
+- Vercel project: https://pine-haven-assisted-living.vercel.app (team dapper-market-solutions-projects,
   auto-deploys from `main` of `Dapper-Market-Solutions/pine-haven-assisted-living`).
 - All 14 routes return 200; unknown paths 404; desktop + mobile QA pass done.
 - **Real brand logo** (pine arch + alpaca + wordmark) pulled from the old WP site, in header/footer;

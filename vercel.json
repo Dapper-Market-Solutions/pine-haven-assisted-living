@@ -4,6 +4,13 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/pinehaven-services", "destination": "/services", "permanent": true },
+    { "source": "/pinehaven-photos", "destination": "/gallery", "permanent": true },
+    { "source": "/home-3", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
+    { "source": "/blog/:slug*", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
