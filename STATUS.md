@@ -21,8 +21,7 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 ## Pending from owner / launch
 - ~~Google Business Profile~~ — **DONE: wired GBP Knowledge Panel (kgmid /g/1tks6ycc) into footer +
   `sameAs`.** Contact form email delivery verified working (Resend, Production env).
-- **Confirm phone** — we use (989) 295-6632 (from the official site). Some directories list
-  (989) 642-5761; confirm which is correct (one line in `src/lib/site.js`).
+- ~~Confirm phone~~ — **DONE: owner confirmed (989) 295-6632 (2026-06-02).** Keep this number.
 - **RESEND_API_KEY** must be set in the Vercel project for the contact form to send.
 - **Domain cutover** — point pinehavenassistedliving.com at this Vercel project once verified, THEN
   delete the old WordPress site (which also kills its injected SEO-spam).
