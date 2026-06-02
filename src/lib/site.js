@@ -9,8 +9,8 @@ export const NAP = {
   name: 'Pine Haven Assisted Living',
   legalName: 'Pine Haven Assisted Living',
   tagline: 'Living well. Living happy. Living safe.',
-  phone: '(989) 295-6632',
-  phoneHref: 'tel:+19892956632',
+  phone: '(989) 642-5761',
+  phoneHref: 'tel:+19896425761',
   email: 'pinehavenassistedliving@gmail.com',
   emailHref: 'mailto:pinehavenassistedliving@gmail.com',
   // Address confirmed by the owner as 515 Brennan Rd (2026-06-01). The old WP

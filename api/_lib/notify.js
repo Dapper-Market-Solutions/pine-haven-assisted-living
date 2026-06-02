@@ -76,7 +76,7 @@ export function acknowledgementEmailHtml({ name }) {
     <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#475c52;">We received your message, and one of our team members will get back to you <strong style="color:#1b2d24;">shortly</strong> to answer your questions or help you schedule a visit.</p>
     <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#475c52;">If you'd like to speak with us right away, we're here for you any time:</p>
     <table style="margin:0 0 24px;font-size:14px;color:#1b2d24;">
-      <tr><td style="padding:4px 0;color:#5b6b62;width:80px;">Phone</td><td style="padding:4px 0;"><a href="tel:+19892956632" style="color:#2c5a45;font-weight:600;">(989) 295-6632</a></td></tr>
+      <tr><td style="padding:4px 0;color:#5b6b62;width:80px;">Phone</td><td style="padding:4px 0;"><a href="tel:+19896425761" style="color:#2c5a45;font-weight:600;">(989) 642-5761</a></td></tr>
       <tr><td style="padding:4px 0;color:#5b6b62;">Visit</td><td style="padding:4px 0;">515 Brennan Rd, Hemlock, MI 48626</td></tr>
     </table>
     <p style="margin:0;font-size:14px;color:#1b2d24;font-weight:600;">— The Pine Haven Family</p>

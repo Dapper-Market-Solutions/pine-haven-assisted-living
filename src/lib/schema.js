@@ -7,7 +7,7 @@ import { SITE_URL, NAP, SERVICE_AREAS } from './site';
 const PROVIDER = {
   '@type': 'AssistedLivingFacility',
   name: NAP.name,
-  telephone: '+1-989-295-6632',
+  telephone: '+1-989-642-5761',
   address: {
     '@type': 'PostalAddress',
     streetAddress: NAP.street,
