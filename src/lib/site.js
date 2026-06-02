@@ -13,10 +13,9 @@ export const NAP = {
   phoneHref: 'tel:+19892956632',
   email: 'pinehavenassistedliving@gmail.com',
   emailHref: 'mailto:pinehavenassistedliving@gmail.com',
-  // NOTE: the old WordPress site disagreed with itself — the home page read
-  // "515 Brennan Rd" and the contact page "555 N Brennan Rd". Confirm with the
-  // owner and fix this ONE line; it feeds every page + the LocalBusiness schema.
-  street: '555 N Brennan Rd',
+  // Address confirmed by the owner as 515 Brennan Rd (2026-06-01). The old WP
+  // site's contact page had the wrong "555 N Brennan Rd"; this is the truth.
+  street: '515 Brennan Rd',
   city: 'Hemlock',
   state: 'MI',
   stateLong: 'Michigan',
@@ -24,7 +23,7 @@ export const NAP = {
   get addressLine() {
     return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
   },
-  mapQuery: '555 N Brennan Rd, Hemlock, MI 48626',
+  mapQuery: '515 Brennan Rd, Hemlock, MI 48626',
   hours: '24 hours a day, 365 days a year',
   geo: { lat: 43.4119, lng: -84.2289 }, // Hemlock, MI — refine if needed
   priceFrom: '$3,300',

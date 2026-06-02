@@ -14,10 +14,7 @@ SSG via `vite-react-ssg`, deployed to Vercel.
   the real domain.
 
 ## ⚠️ Open items before launch
-1. **CONFIRM STREET ADDRESS.** The old WP site disagreed with itself: home page said "515 Brennan Rd",
-   contact page said "555 N Brennan Rd". We used **555 N Brennan Rd** everywhere. If wrong, fix the
-   ONE `street` line in `src/lib/site.js` + the JSON-LD `streetAddress` in `index.html` + the email
-   footer in `api/_lib/notify.js`. Feeds LocalBusiness schema + Google Business Profile — get it right.
+1. ~~Confirm street address~~ — **DONE 2026-06-01: confirmed 515 Brennan Rd, Hemlock, MI 48626.**
 2. **Verify the geo coordinates** in `index.html` / `site.js` (approximate Hemlock lat/lng right now).
 3. **RESEND_API_KEY** must be set in Vercel for the contact form to send. Optionally set
    `OPS_TEAM_EMAIL` (defaults to pinehavenassistedliving@gmail.com) and `EMAIL_FROM` once a Pine Haven
