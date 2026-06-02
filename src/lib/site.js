@@ -33,7 +33,7 @@ export const NAP = {
 // array in index.html (the entity-layer JSON-LD). Leave a value '' to hide it.
 export const SOCIALS = {
   facebook: 'https://www.facebook.com/PineHavenSeniorAssistedLivingLLC/',
-  google: '', // Google Business Profile / Maps URL — pending from owner
+  google: 'https://www.google.com/search?kgmid=/g/1tks6ycc', // GBP Knowledge Panel (kgmid /g/1tks6ycc)
 };
 
 // Communities Pine Haven draws from — drives the local pages + areaServed schema.

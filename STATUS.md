@@ -19,8 +19,8 @@ SSG via `vite-react-ssg`, deployed to Vercel.
   the real domain.
 
 ## Pending from owner / launch
-- **Google Business Profile URL** — slot ready in `src/lib/site.js` (`SOCIALS.google`) + the footer +
-  the `sameAs` array in `index.html`. Drop the Maps/GBP link in all three when received.
+- ~~Google Business Profile~~ — **DONE: wired GBP Knowledge Panel (kgmid /g/1tks6ycc) into footer +
+  `sameAs`.** Contact form email delivery verified working (Resend, Production env).
 - **Confirm phone** — we use (989) 295-6632 (from the official site). Some directories list
   (989) 642-5761; confirm which is correct (one line in `src/lib/site.js`).
 - **RESEND_API_KEY** must be set in the Vercel project for the contact form to send.
