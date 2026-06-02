@@ -7,13 +7,25 @@ site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tail
 SSG via `vite-react-ssg`, deployed to Vercel.
 
 ## Current state
-- **Built, verified, and pushed to GitHub** (`Dapper-Market-Solutions/pine-haven-assisted-living`, main).
-  `npm run build` prerenders 14 static pages; all routes return 200; mobile (375px) verified clean.
-- **Not yet imported into Vercel.** Next step: import the repo at vercel.com (team
-  dapper-market-solutions-projects), framework auto-detects as Vite, set `RESEND_API_KEY`, deploy.
-  Repo root IS the app (no monorepo subdir), so Vercel Root Directory = `.`.
+- **LIVE on Vercel:** https://pine-haven-assisted-living.vercel.app (team dapper-market-solutions-projects,
+  auto-deploys from `main` of `Dapper-Market-Solutions/pine-haven-assisted-living`).
+- All 14 routes return 200; unknown paths 404; desktop + mobile QA pass done.
+- **Real brand logo** (pine arch + alpaca + wordmark) pulled from the old WP site, in header/footer;
+  favicon + OG card regenerated from it (`scripts/generate-assets.py` now reuses logo.png artwork).
+- **GTM-K58BLPDF** wired (consent-gated). **AudienceLab WVID pixel** `6a1e56af...` added outside the
+  consent gate, with a matching Privacy Policy disclosure.
+- **Facebook** (`facebook.com/PineHavenSeniorAssistedLivingLLC`) in footer + `sameAs`.
 - Old WordPress site is still live and should NOT be deleted until the new site is verified live on
   the real domain.
+
+## Pending from owner / launch
+- **Google Business Profile URL** — slot ready in `src/lib/site.js` (`SOCIALS.google`) + the footer +
+  the `sameAs` array in `index.html`. Drop the Maps/GBP link in all three when received.
+- **Confirm phone** — we use (989) 295-6632 (from the official site). Some directories list
+  (989) 642-5761; confirm which is correct (one line in `src/lib/site.js`).
+- **RESEND_API_KEY** must be set in the Vercel project for the contact form to send.
+- **Domain cutover** — point pinehavenassistedliving.com at this Vercel project once verified, THEN
+  delete the old WordPress site (which also kills its injected SEO-spam).
 
 ## ⚠️ Open items before launch
 1. ~~Confirm street address~~ — **DONE 2026-06-01: confirmed 515 Brennan Rd, Hemlock, MI 48626.**
