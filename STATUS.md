@@ -18,7 +18,8 @@ SSG via `vite-react-ssg`, deployed to Vercel.
   favicon + OG card regenerated from it (`scripts/generate-assets.py` now reuses logo.png artwork).
 - **GTM-K58BLPDF** wired (consent-gated). **AudienceLab WVID pixel** `6a1e56af...` added outside the
   consent gate, with a matching Privacy Policy disclosure.
-- **Facebook** (`facebook.com/PineHavenSeniorAssistedLivingLLC`) in footer + `sameAs`.
+- **Facebook** (`facebook.com/PineHavenSeniorAssistedLivingLLC`) + **Instagram** (`@pinehavenafc`)
+  in footer + `sameAs`.
 - Old WordPress site is still live and should NOT be deleted until the new site is verified live on
   the real domain.
 

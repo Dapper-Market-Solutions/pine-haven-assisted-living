@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Facebook, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Star } from 'lucide-react';
 import { NAP, SERVICE_AREAS, SOCIALS } from '@/lib/site';
 
 const Footer = () => {
@@ -17,6 +17,11 @@ const Footer = () => {
               {SOCIALS.facebook && (
                 <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Pine Haven on Facebook" className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
                   <Facebook className="w-5 h-5" />
+                </a>
+              )}
+              {SOCIALS.instagram && (
+                <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Pine Haven on Instagram" className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                  <Instagram className="w-5 h-5" />
                 </a>
               )}
               {SOCIALS.google && (

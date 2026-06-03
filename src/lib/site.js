@@ -39,6 +39,7 @@ export const NAP = {
 // array in index.html (the entity-layer JSON-LD). Leave a value '' to hide it.
 export const SOCIALS = {
   facebook: 'https://www.facebook.com/PineHavenSeniorAssistedLivingLLC/',
+  instagram: 'https://www.instagram.com/pinehavenafc/', // @pinehavenafc
   google: 'https://www.google.com/search?kgmid=/g/1tks6ycc', // GBP Knowledge Panel (kgmid /g/1tks6ycc)
 };
 
