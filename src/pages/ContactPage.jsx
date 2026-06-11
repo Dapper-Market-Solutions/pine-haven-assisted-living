@@ -10,11 +10,13 @@ import { toast } from 'sonner';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import MetaTags from '@/components/MetaTags.jsx';
+import Turnstile from '@/components/Turnstile.jsx';
 import { trackLead } from '@/lib/analytics';
 import { NAP } from '@/lib/site';
 import { breadcrumbSchema } from '@/lib/schema';
 
 const CARE_OPTIONS = ['Assisted Living', 'Memory Care', 'Respite Care', 'A tour / general question'];
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -23,9 +25,14 @@ const ContactPage = () => {
   const [consent, setConsent] = useState(false);
   const [loading, setLoading] = useState(false);
   const submittingRef = useRef(false); // synchronous double-submit guard — survives rapid clicks
+  const [tsToken, setTsToken] = useState(''); // Cloudflare Turnstile token
+  const renderedAt = useRef(0); // anti-spam time-trap: set on mount
+  const honeypotRef = useRef(null); // anti-spam honeypot field
 
-  // Pre-select the care type if arriving via ?interest=Memory%20Care etc.
+  // Pre-select the care type if arriving via ?interest=Memory%20Care etc.,
+  // and stamp the form render time for the time-trap.
   useEffect(() => {
+    renderedAt.current = Date.now();
     const params = new URLSearchParams(window.location.search);
     const interest = params.get('interest');
     if (interest && CARE_OPTIONS.includes(interest)) {
@@ -54,6 +61,10 @@ const ContactPage = () => {
           ...formData,
           pageUrl: window.location.pathname,
           referrer: document.referrer || 'direct',
+          // Anti-spam (see api/_lib/antispam.js)
+          website: honeypotRef.current?.value || '',
+          renderedAt: renderedAt.current,
+          turnstileToken: tsToken,
         }),
       });
 
@@ -133,7 +144,15 @@ const ContactPage = () => {
                     I agree that Pine Haven may contact me by phone, text, or email about my inquiry. Message and data rates may apply; consent is not a condition of any service.
                   </Label>
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" disabled={loading}>
+                {/* Honeypot — off-screen; humans never fill it, bots do and get silently dropped. */}
+                <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 0, height: 0, overflow: 'hidden' }}>
+                  <label>Website<input ref={honeypotRef} type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
+                </div>
+
+                {/* Cloudflare Turnstile — renders only when VITE_TURNSTILE_SITE_KEY is set. */}
+                <Turnstile siteKey={TURNSTILE_SITE_KEY} onToken={setTsToken} />
+
+                <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" disabled={loading || (TURNSTILE_SITE_KEY && !tsToken)}>
                   {loading ? 'Sending…' : 'Send Message'}
                 </Button>
               </form>

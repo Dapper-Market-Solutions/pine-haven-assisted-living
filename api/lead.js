@@ -17,6 +17,7 @@
 //                     e.g. deepak@dapperms.com for oversight)
 
 import { applyCors, sendEmail, leadEmailHtml, acknowledgementEmailHtml } from './_lib/notify.js'
+import { screenLead, clientIp } from './_lib/antispam.js'
 
 const DEFAULT_OPS = 'pinehavenassistedliving@gmail.com'
 
@@ -24,6 +25,20 @@ export default async function handler(req, res) {
   applyCors(res)
   if (req.method === 'OPTIONS') return res.status(204).end()
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
+
+  // Anti-spam gate (honeypot + time-trap + content + origin + Turnstile + best-
+  // effort rate limit) BEFORE any email is sent. Silent failures return a fake
+  // 200 so bots don't retry; hard failures return an error. See _lib/antispam.js.
+  const ip = clientIp(req)
+  const verdict = await screenLead(req, req.body || {}, ip)
+  if (!verdict.ok) {
+    if (verdict.silent) return res.status(200).json({ ok: true })
+    const error =
+      verdict.reason === 'turnstile' ? 'Verification failed — please try again.'
+      : verdict.reason === 'rate' ? 'Too many requests — please wait a moment.'
+      : 'Request blocked.'
+    return res.status(verdict.status).json({ ok: false, error })
+  }
 
   const {
     name = '',
