@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import MetaTags from '@/components/MetaTags.jsx';
 
 const NotFoundPage = () => {
+  useEffect(() => {
+    // DMS 404-logging loop: report this dead URL so the SEO/GEO cron can
+    // auto-redirect recurring 404s. Fire-and-forget; never blocks the page.
+    try {
+      fetch('https://help.dapperms.com/api/ingest-404', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer || null }),
+        keepalive: true,
+      }).catch(() => {})
+    } catch { /* ignore */ }
+  }, [])
+
   return (
     <>
       <MetaTags title="Page Not Found" description="The page you’re looking for doesn’t exist." />
