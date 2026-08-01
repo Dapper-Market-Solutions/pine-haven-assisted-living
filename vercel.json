@@ -5,24 +5,150 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pinehaven-services", "destination": "/services", "permanent": true },
-    { "source": "/pinehaven-photos", "destination": "/gallery", "permanent": true },
-    { "source": "/home-3", "destination": "/", "permanent": true },
-    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
-    { "source": "/blog/:slug*", "destination": "/", "permanent": true }
+    {
+      "source": "/pinehaven-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pinehaven-photos",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/home-3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug*",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/feed",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "destination": "/api/410"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cat"
+        }
+      ],
+      "destination": "/api/410"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "m"
+        }
+      ],
+      "destination": "/api/410"
+    },
+    {
+      "source": "/tag/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "tag"
+        }
+      ],
+      "destination": "/api/410"
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/api/410"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
       ]
     }
   ]
