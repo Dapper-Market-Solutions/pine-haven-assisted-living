@@ -58,6 +58,7 @@ export const NAV = [
     ],
   },
   { name: 'Photo Gallery', path: '/gallery' },
+  { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
 ];
 

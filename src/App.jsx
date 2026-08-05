@@ -9,6 +9,9 @@ import AssistedLivingPage from './pages/AssistedLivingPage.jsx';
 import MemoryCarePage from './pages/MemoryCarePage.jsx';
 import RespiteCarePage from './pages/RespiteCarePage.jsx';
 import GalleryPage from './pages/GalleryPage.jsx';
+import BlogIndexPage from '@/pages/BlogIndexPage.jsx';
+import BlogPostPage from '@/pages/BlogPostPage.jsx';
+import { postSlugs } from '@/content/posts';
 import ContactPage from './pages/ContactPage.jsx';
 import ThankYouPage from './pages/ThankYouPage.jsx';
 import AreaPage from './pages/AreaPage.jsx';
@@ -63,6 +66,14 @@ export const routes = [
       { path: 'memory-care', element: <MemoryCarePage /> },
       { path: 'respite-care', element: <RespiteCarePage /> },
       { path: 'gallery', element: <GalleryPage /> },
+      { path: 'blog', element: <BlogIndexPage /> },
+      {
+        path: 'blog/:slug',
+        element: <BlogPostPage />,
+        // Required so vite-react-ssg prerenders one static HTML file per post —
+        // most AI crawlers and some search bots do not run JS.
+        getStaticPaths: () => postSlugs.map((slug) => `/blog/${slug}`),
+      },
       { path: 'contact', element: <ContactPage /> },
       { path: 'thank-you', element: <ThankYouPage /> },
       { path: 'assisted-living-saginaw', element: <AreaPage {...AREAS['saginaw']} slug="/assisted-living-saginaw" /> },
