@@ -86,3 +86,23 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 - Target: new Vercel project + GitHub repo under `Dapper-Market-Solutions`, then point
   `pinehavenassistedliving.com` at it once verified. `vercel.json` already has the SPA rewrite,
   cleanUrls, and security headers.
+
+## 2026-08-05 — Blog wired, Writer enabled
+
+The site had no blog at all — no loader, no routes, no post page, no body styles. Turning the
+Writer on in that state would have committed approved JSON into a directory nothing reads, so
+the scaffold went in first.
+
+`/blog` and `/blog/:slug` now exist, with `getStaticPaths` so every post prerenders to static
+HTML. The loader is a **glob**, chosen against the `posts-index.json` manifest pattern used by
+`get-well-chiro` and `nxt-level-carts` — on both of those, posts exist that were never added to
+the manifest, so they have no route and appear nowhere. A glob cannot drift.
+
+Verified end to end with a throwaway post: it prerendered with its body copy plus BlogPosting
+and BreadcrumbList baked into the HTML, appeared on the index, and the nav link rendered. Test
+post removed; the empty state renders again.
+
+Portal: `blog_enabled = true`, 2 posts/month, notify `Deepak@dapperms.com`.
+`blog_auto_publish` is deliberately **off** — unlike Get Well, Memory Lane and Boca EV, this
+site has no published posts to judge the writer's voice against, and senior care is a subject
+where a wrong claim costs more than a slow one. Turn it on once a few drafts read right.

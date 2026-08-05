@@ -15,9 +15,14 @@
 
 - **Services:** Assisted Living, Memory Care, Respite Care — plus an `AreaPage` for local
   service-area coverage and a Gallery.
-- **No blog.** There is no `src/content/posts/` directory and the Blog Writer is off for this
-  site. If it's ever turned on, the receiving scaffold has to be built first (loader, route,
-  BlogPost page, `.post-content` CSS) or approvals commit JSON into a void.
+- **Blog is live** at `/blog` and `/blog/:slug`, and the Weekly Blog Writer is **on** (2 posts
+  a month, drafts go to review — `blog_auto_publish` is off until the voice is proven on this
+  site). Posts are JSON files in `src/content/posts/`, picked up by a **glob** loader
+  (`index.js`) — drop a file in, it gets a route and appears on the index. There is
+  deliberately **no `posts-index.json` manifest**: that hand-maintained pattern on two other
+  DMS sites is why posts exist there with no route. `/blog/:slug` has `getStaticPaths`, so
+  every post prerenders. The writer emits classless HTML, styled by `.post-content` in
+  `src/index.css`. It reads `featuredImage` (with `image` as a fallback).
 - **GEO / AI-answer tracking is ON**; the SEO analyst runs on the 1st and 15th.
 
 ## Traps specific to this repo
