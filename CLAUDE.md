@@ -48,11 +48,13 @@ than §10's single-knob `brand.config.js`, so **searching for `#` finds nothing*
    numbers — no bed counts, staff ratios or pricing that aren't already sourced.
 2. **Anti-spam is wired on the forms** (honeypot + time-trap + Turnstile). Any new form must
    keep it; removing it invites junk into the client's inbox.
-3. ⚠️ **`public/sitemap.xml` is COMMITTED, not generated.** There is no `prebuild` hook and no
-   `build-sitemap` script — unlike most of the fleet, where hand edits get clobbered by the next
-   build. Here the opposite holds: a hand edit sticks, and **nothing will add a new route for
-   you.** Add a page or a blog post and you must edit the sitemap yourself. (14 URLs today,
-   including `/blog`.)
+3. **`public/sitemap.xml` is GENERATED** by `scripts/build-sitemap.js` on `prebuild` — do not
+   hand-edit it, the next build wins. It parses the `path:` keys out of `App.jsx`'s exported
+   `routes` array (it can't `import` it — that file is JSX), so **adding a route to App.jsx is
+   all you do**; blog posts in `src/content/posts/` are picked up automatically. `lastmod` is
+   preserved per-URL rather than restamped, because Vercel builds from a shallow clone and
+   restamping tells crawlers the whole site changed. If you restructure the route array, check
+   this parse — it hard-fails under 10 URLs rather than shipping a truncated sitemap.
 4. **Dead URLs beacon to the DMS 404 loop** (`NotFound` posts to `/api/ingest-404`). Keep that
    wiring when touching the 404 page — it's how broken inbound links get found.
 
