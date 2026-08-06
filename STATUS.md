@@ -1,6 +1,6 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-08-06 — docs pass; template-standard audit underway.
+**Last updated:** 2026-08-06 — template-standard audit; sitemap is now generated.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
@@ -128,3 +128,43 @@ Blog wiring from the previous session verified end to end: glob loader, `getStat
 `/blog/:slug`, `.post-content` styles present, and **no `posts-index.json`** — the
 hand-maintained manifest that left a Get Well post live-but-empty for four days cannot happen
 here. 0 posts so far, as expected. `/` and `/blog` both 200.
+
+## 2026-08-06 — Template-standard audit: one real gap, and it was the dangerous one
+
+Audited against the DMS site standard §1–§11. The repo came out **better than expected** — these
+were already correct and needed no change: `robots.txt` (AI-crawler allow-list), `llms.txt`,
+`site.webmanifest`, favicon PNGs + `og-preview.jpg`, security headers, Consent Mode v2 defaults +
+consent-gated GTM, `analytics.js` with `trackLead`, LocalBusiness/AssistedLivingFacility JSON-LD
+with a real `sameAs` (Facebook, Instagram, Google KG), a visible `FAQ` component **with** matching
+FAQPage schema, FTC Do-Not-Call links in both the footer and Privacy, TCPA consent checkbox,
+honeypot + time-trap antispam, and the `/api/lead` → Resend-required (502) + Slack-optional path.
+The **`useRef` double-submit guard is present and correct**, including the reset in `finally`.
+
+**The one gap: there was no sitemap generator.** `public/sitemap.xml` was hand-maintained. That
+was fine while the route list was static — and it was in fact accurate, 14 URLs matching the
+router exactly. But the Weekly Blog Writer is **on** for this site and publishes into
+`src/content/posts/`. The first post would have gone live, correctly routed and linked from
+`/blog`, and **never entered the sitemap** — invisible to search and AI crawlers, with nothing
+failing or warning. A silent-loss failure of exactly the shape that has bitten this fleet before.
+
+`scripts/build-sitemap.js` now runs on `prebuild`. It parses the `path:` keys out of `App.jsx`'s
+exported `routes` array — it cannot `import` it, that file is JSX — and globs the posts dir, so
+one source of truth stays the router. `lastmod` is **preserved per-URL, not restamped**: Vercel
+builds from a shallow clone so git dates aren't reliable, and restamping claims the whole site
+changed when it didn't. A post's own `modified` date wins over today's.
+
+Verified three ways: identical 14-URL set to the hand file (order-only change), 13 of 14 lastmods
+carried over, and a probe post surfaced at `/blog/probe-post` with `lastmod` `2026-08-04` from its
+own `modified` field. Full build clean, 15 pages prerendered.
+
+### Open: no `favicon.svg`
+
+§4 asks for one and there is none — only the 16/32 PNGs and `apple-touch-icon`. Browsers are fully
+covered by those, so this is a nice-to-have (scalable, dark-mode variants), not a defect.
+
+Not fabricated on purpose: the brand mark is a **raster** logo (the alpaca in `public/logo.png`),
+and the PNGs are generated from it. An SVG would be either a crude auto-trace or a different mark
+than the PNGs — inconsistency for a checklist tick. Needs a real vector logo from the client.
+Note that `scripts/generate-assets.py` claims it is "keeping the existing one" — **there is no
+existing one**; that comment is wrong and predates this audit.
+
