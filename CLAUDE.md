@@ -7,7 +7,7 @@
   (Saginaw County).
 - **Repo:** `Dapper-Market-Solutions/pine-haven-assisted-living` (SSH). Push to `main` → Vercel.
 - **Stack:** React 18 + Vite 7 + Tailwind 3 + **`vite-react-ssg`** + `react-helmet-async`.
-- **Shape:** 13 pages in `src/pages/*Page.jsx`, 12 components,
+- **Shape:** 15 pages in `src/pages/*Page.jsx` (13 site pages + `BlogIndexPage` + `BlogPostPage`), 12 components,
   `src/lib/{site,schema,analytics,utils}.js`.
 - **SEO:** `<MetaTags>` (the DMS standard). Don't introduce a `useSEO` hook.
 
@@ -25,6 +25,22 @@
   `src/index.css`. It reads `featuredImage` (with `image` as a fallback).
 - **GEO / AI-answer tracking is ON**; the SEO analyst runs on the 1st and 15th.
 
+## Brand
+
+There is **no `brand.config.js`** here — the palette is **HSL CSS variables** in `src/index.css`,
+consumed by `tailwind.config.js` as `hsl(var(--primary))`. That is the shadcn-style pattern rather
+than §10's single-knob `brand.config.js`, so **searching for `#` finds nothing**.
+
+| Var | HSL | Roughly |
+|---|---|---|
+| `--primary` | `152 30% 33%` | forest green |
+| `--secondary` | `158 32% 19%` | deep green |
+| `--accent` | `28 78% 50%` | warm amber |
+| `--background` | `40 33% 98%` | warm off-white |
+| `--foreground` | `156 24% 14%` | near-black green |
+
+**Edit the CSS vars, never the Tailwind config** — the config only points at them.
+
 ## Traps specific to this repo
 
 1. **YMYL / elder care.** Copy about care levels, staffing and safety carries real weight for
@@ -32,7 +48,12 @@
    numbers — no bed counts, staff ratios or pricing that aren't already sourced.
 2. **Anti-spam is wired on the forms** (honeypot + time-trap + Turnstile). Any new form must
    keep it; removing it invites junk into the client's inbox.
-3. **Dead URLs beacon to the DMS 404 loop** (`NotFound` posts to `/api/ingest-404`). Keep that
+3. ⚠️ **`public/sitemap.xml` is COMMITTED, not generated.** There is no `prebuild` hook and no
+   `build-sitemap` script — unlike most of the fleet, where hand edits get clobbered by the next
+   build. Here the opposite holds: a hand edit sticks, and **nothing will add a new route for
+   you.** Add a page or a blog post and you must edit the sitemap yourself. (14 URLs today,
+   including `/blog`.)
+4. **Dead URLs beacon to the DMS 404 loop** (`NotFound` posts to `/api/ingest-404`). Keep that
    wiring when touching the 404 page — it's how broken inbound links get found.
 
 ## Standing rules

@@ -1,6 +1,6 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-08-06 — docs pass; template-standard audit underway.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
@@ -106,3 +106,25 @@ Portal: `blog_enabled = true`, 2 posts/month, notify `Deepak@dapperms.com`.
 `blog_auto_publish` is deliberately **off** — unlike Get Well, Memory Lane and Boca EV, this
 site has no published posts to judge the writer's voice against, and senior care is a subject
 where a wrong claim costs more than a slow one. Turn it on once a few drafts read right.
+
+## 2026-08-06 — Docs corrected; brand and sitemap behaviour written down
+
+`CLAUDE.md` said **13 pages**; there are **15**. My own drift — I added `BlogIndexPage` and
+`BlogPostPage` the night before and did not update the line I had written a commit earlier. Now
+reads 15 (13 site pages + the two blog pages). The 12-component count was correct.
+
+Two things were true of this repo but written down nowhere:
+
+- **There is no `brand.config.js`.** The palette is shadcn-style **HSL CSS vars** in
+  `src/index.css` (`--primary: 152 30% 33%` forest green, `--secondary`, `--accent` amber),
+  consumed by Tailwind as `hsl(var(--primary))`. That deviates from §10's single-knob
+  `brand.config.js` — same shape as `injury-care-coordination`. Documented in a new **Brand**
+  section, so nobody hunts for a config that was never here or greps for `#` and finds nothing.
+- **`public/sitemap.xml` is committed, not generated.** No `prebuild`, no `build-sitemap`
+  script. That inverts the fleet default: a hand edit *sticks* here, and nothing adds a new
+  route for you. Recorded as a trap.
+
+Blog wiring from the previous session verified end to end: glob loader, `getStaticPaths` on
+`/blog/:slug`, `.post-content` styles present, and **no `posts-index.json`** — the
+hand-maintained manifest that left a Get Well post live-but-empty for four days cannot happen
+here. 0 posts so far, as expected. `/` and `/blog` both 200.
