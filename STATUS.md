@@ -1,6 +1,6 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-08-06 — template-standard audit; sitemap is now generated.
+**Last updated:** 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
@@ -168,3 +168,61 @@ than the PNGs — inconsistency for a checklist tick. Needs a real vector logo f
 Note that `scripts/generate-assets.py` claims it is "keeping the existing one" — **there is no
 existing one**; that comment is wrong and predates this audit.
 
+
+## 2026-08-09 — The first post arrived, and it had an invented quote in it
+
+The Weekly Blog Writer filed its first Pine Haven draft (08:35 EDT, task `40feda17`): *"Assisted
+Living in Hemlock, MI: What Makes Pine Haven Different From a Nursing Home"*, two proposals (post
+JSON + hero image). Nothing failed — **it looked like it hadn't run because nothing says so**.
+`blog-propose` only emails on the auto-publish path; a manual-review site's only signal is the
+portal task queue, so a draft can sit there unannounced.
+
+Reviewing it found the defect the fleet had just been bitten by on ICC. The post attributed this
+to Dr. Bill Thomas, unlinked:
+
+> "The antidote to loneliness is not a roommate, it is genuine human connection and a life that
+> continues to feel like your own."
+
+Bill Thomas, the Eden Alternative, and the three plagues (loneliness, helplessness, boredom) are
+all real. **That sentence is not** — it appears in no source. This is the failure mode worth
+naming: every other defect the writer produces is visible to the client, and a fabricated quote
+reads as the most credible line in the piece.
+
+Three more, found by pulling on the same thread:
+
+- **"Approximately 818,800 residents… according to the National Institute on Aging."** Not NIA's
+  figure (CDC's NPALS is nearer 918,700 for 2018, and current sources say over a million), and the
+  NIA URL it linked could not be verified. **Cut rather than swapped** — replacing one number I
+  can't verify with another I can't verify is not a fix.
+- **"The same NIA data notes residents typically cite 'maintaining independence'…"** — not on the
+  cited page. Cut.
+- **"Residents have their own private accommodations"** — Pine Haven sells **semi-private $3,500**
+  and **private $3,900**. Now reads "private or semi-private".
+
+The 53M caregiving stat was real but unlinked; it now points at the NAC/AARP *Caregiving in the
+U.S. 2020* report. The Alzheimer's Association 6.9M figure and link were correct and untouched.
+Corrections were applied to the pending proposal directly — `/api/blog-redraft` needs a browser
+session (`verifyTeamMember`), and regenerating the whole post would have put the other 90%, which
+was good, back at risk.
+
+### `blog_auto_publish` is now ON (Deepak, 2026-08-09)
+
+This reverses the 2026-08-05 decision above, deliberately and with the reason changed. That entry
+held it off because the voice was unproven; the voice reads right, and the specific hazard that
+made senior care feel too risky to automate — a confident invented claim — now has an enforcement
+layer rather than a prompt asking nicely. `uncitedQuotes` shipped in dms-portal (471e608, live in
+production) **after** this draft was generated, which is exactly why this one got through: it
+blocks auto-publish and holds the draft for a human when a quotation sits near an attribution verb
+with no link in the same paragraph.
+
+**What that means for this repo now:** a drafted post commits to `main` and deploys with nobody
+approving it. The guard covers fabricated *quotes*. It does **not** cover a fabricated *statistic*,
+a dead source link, or a claim that contradicts the client's own pricing — all three of which were
+in this very draft. Spot-check the live post; do not assume review happened.
+
+**Still open:** the redraft path (`redraftBlog` in dms-portal `api/_lib/blog-agent.js`) does not run
+`uncitedQuotes` — only `blog-propose` does. Redrafts always file as `needs_review` so a human sees
+them, which is why this is a gap and not a hole, but it should get the same check.
+
+This draft was filed under the old setting, so **it still needs a manual Approve** — auto-publish is
+decided when the post is proposed, not when it is approved. Everything after it ships on its own.

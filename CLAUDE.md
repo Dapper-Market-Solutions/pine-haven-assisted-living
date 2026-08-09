@@ -16,8 +16,12 @@
 - **Services:** Assisted Living, Memory Care, Respite Care — plus an `AreaPage` for local
   service-area coverage and a Gallery.
 - **Blog is live** at `/blog` and `/blog/:slug`, and the Weekly Blog Writer is **on** (2 posts
-  a month, drafts go to review — `blog_auto_publish` is off until the voice is proven on this
-  site). Posts are JSON files in `src/content/posts/`, picked up by a **glob** loader
+  a month). **`blog_auto_publish` is ON** — a drafted post commits straight to `main` and
+  deploys without a human approving it, so the portal-side guards are the only thing between
+  the writer and the live site. The one that matters most here: a quote attributed to an
+  outside named source with no link to it **holds the draft for review** instead of shipping
+  (`uncitedQuotes` in dms-portal `api/blog-propose.js`). Posts are JSON files in
+  `src/content/posts/`, picked up by a **glob** loader
   (`index.js`) — drop a file in, it gets a route and appears on the index. There is
   deliberately **no `posts-index.json` manifest**: that hand-maintained pattern on two other
   DMS sites is why posts exist there with no route. `/blog/:slug` has `getStaticPaths`, so
