@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Star } from 'lucide-react';
-import { NAP, SERVICE_AREAS, SOCIALS } from '@/lib/site';
+import { NAP, SOCIALS } from '@/lib/site';
 
 const Footer = () => {
   return (
@@ -76,9 +76,17 @@ const Footer = () => {
           <div>
             <span className="font-semibold text-base mb-4 block font-display">Proudly Serving</span>
             <ul className="space-y-2">
-              {SERVICE_AREAS.map((area) => (
-                <li key={area} className="text-sm text-secondary-foreground/80">{area}, MI</li>
-              ))}
+              <li className="text-sm text-secondary-foreground/80">Hemlock, MI</li>
+              <li className="text-sm text-secondary-foreground/80">
+                <Link to="/assisted-living-saginaw" className="hover:text-secondary-foreground transition-colors">Saginaw, MI</Link>
+              </li>
+              <li className="text-sm text-secondary-foreground/80">
+                <Link to="/assisted-living-midland" className="hover:text-secondary-foreground transition-colors">Midland, MI</Link>
+              </li>
+              <li className="text-sm text-secondary-foreground/80">
+                <Link to="/assisted-living-bay-city" className="hover:text-secondary-foreground transition-colors">Bay City, MI</Link>
+              </li>
+              <li className="text-sm text-secondary-foreground/80">Merrill, MI</li>
             </ul>
           </div>
         </div>

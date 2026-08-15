@@ -22,15 +22,15 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     },
     {
       q: `How far is Pine Haven from ${city}?`,
-      a: `Pine Haven is at ${NAP.addressLine}, ${distance} ${city} — an easy drive for family visits, which we warmly encourage any time.`,
+      a: `Pine Haven is at ${NAP.addressLine}, ${distance} ${city} \u2014 an easy drive for family visits, which we warmly encourage any time.`,
     },
     {
       q: `What kinds of senior care does Pine Haven offer ${city} families?`,
-      a: 'We offer assisted living, memory care for dementia and Alzheimer’s, and short-term respite care, all within small six-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.',
+      a: "We offer assisted living, memory care for dementia and Alzheimer\u2019s, and short-term respite care, all within small six-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.",
     },
     {
       q: `How much does assisted living near ${city} cost at Pine Haven?`,
-      a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also help families apply long-term care insurance and accept the Medicaid waiver. Call ${NAP.phone} for a quote based on your loved one’s needs.`,
+      a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also help families apply long-term care insurance and accept the Medicaid waiver. Call ${NAP.phone} for a quote based on your loved one\u2019s needs.`,
     },
   ];
 
@@ -52,7 +52,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     <>
       <MetaTags
         title={`Assisted Living & Memory Care Near ${city}, MI`}
-        description={`Looking for assisted living, memory care, or respite care near ${city}, MI? Pine Haven in nearby Hemlock offers warm, six-bedroom homes with a registered nurse on staff and home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
+        description={`Assisted living, memory care, and respite care near ${city}, MI \u2014 at Pine Haven in Hemlock. Six-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={schema}
       />
       <Header />
@@ -71,7 +71,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
               When a parent or spouse from {city} needs more care than home can provide, the last thing most families want is a big, impersonal facility. Pine Haven is the alternative: a real, six-bedroom home in the country, {distance} {city}, where your loved one is known by name.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              With a registered nurse and LPNs on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn’t possible at larger places — all just a short drive from {city}.
+              With a registered nurse and LPNs on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn&apos;t possible at larger places &mdash; all just a short drive from {city}.
             </p>
           </div>
         </section>
@@ -81,8 +81,8 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Care options for {city} families</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: 'Assisted Living', path: '/assisted-living', body: 'Daily support with meals, medication, and personal care — independence intact.' },
-                { title: 'Memory Care', path: '/memory-care', body: 'Specialized dementia and Alzheimer’s care in a calm, secure home setting.' },
+                { title: 'Assisted Living', path: '/assisted-living', body: 'Daily support with meals, medication, and personal care \u2014 independence intact.' },
+                { title: 'Memory Care', path: '/memory-care', body: "Specialized dementia and Alzheimer\u2019s care in a calm, secure home setting." },
                 { title: 'Respite Care', path: '/respite-care', body: 'Short-term stays that give family caregivers a much-needed break.' },
               ].map((s) => (
                 <Link key={s.path} to={s.path} className="group bg-card rounded-2xl p-7 shadow-sm border border-border hover:shadow-lg hover:-translate-y-1 transition-all">
@@ -100,12 +100,12 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
             <h2 className="text-3xl font-bold text-foreground mb-6">Why {city} families choose Pine Haven</h2>
             <ul className="space-y-3">
               {[
-                'A small, six-bedroom home — never a crowded institution',
+                'A small, six-bedroom home \u2014 never a crowded institution',
                 'Registered nurse & LPNs on staff for real clinical oversight',
                 'Home-cooked meals served family-style every day',
                 'On-site alpacas, a llama, sheep, goats, and chickens residents adore',
                 `Rent from ${NAP.priceFrom}/mo with financial assistance available`,
-                'A quiet country setting that’s still an easy drive for visits',
+                "A quiet country setting that\u2019s still an easy drive for visits",
               ].map((p) => (
                 <li key={p} className="flex items-start gap-3 text-base md:text-lg text-foreground">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" /> {p}
@@ -125,7 +125,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
           </div>
         </section>
 
-        <FAQ faqs={faqs} title={`${city} senior care — common questions`} />
+        <FAQ faqs={faqs} title={`${city} senior care \u2014 common questions`} />
 
         <CTASection title={`Schedule a visit from ${city}`} />
       </main>
