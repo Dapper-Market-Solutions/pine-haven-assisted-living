@@ -45,7 +45,7 @@ const AREAS = {
     city: 'Midland',
     distance: 'a short drive south of',
     blurb:
-      'For Midland families, Pine Haven offers an intimate, six-bedroom assisted living and memory care home with a registered nurse on staff and home-cooked meals every day.',
+      'Midland families looking for an alternative to large assisted living facilities choose Pine Haven — a small six-bedroom home in Hemlock, a short drive south of Midland, with an RN on staff and home-cooked meals every day.',
   },
   'bay-city': {
     city: 'Bay City',

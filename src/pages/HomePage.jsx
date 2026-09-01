@@ -14,10 +14,10 @@ import { faqSchema } from '@/lib/schema';
 
 const highlights = [
   { icon: PawPrint, title: 'Companion animals on site', body: 'Alpacas, a llama, sheep, goats, and chickens residents help care for and love every day.' },
-  { icon: Stethoscope, title: 'Registered Nurse & LPNs on staff', body: 'A registered nurse and licensed practical nurses on site — not just visiting aides.' },
+  { icon: Stethoscope, title: 'Registered Nurse & LPNs on staff', body: 'A registered nurse and licensed practical nurses on site \u2014 not just visiting aides.' },
   { icon: Utensils, title: 'Home-cooked meals', body: 'Three fresh, made-from-scratch meals served family-style each day.' },
-  { icon: DollarSign, title: `Rent from ${NAP.priceFrom}/mo`, body: `Semi-private rooms ${NAP.priceSemiPrivate}/mo, private rooms ${NAP.pricePrivate}/mo — financial assistance available for those who qualify.` },
-  { icon: HomeIcon, title: 'State-licensed for 18 residents', body: 'Small, six-bedroom homes — a real house with a handful of neighbors, never an institution.' },
+  { icon: DollarSign, title: `Rent from ${NAP.priceFrom}/mo`, body: `Semi-private rooms ${NAP.priceSemiPrivate}/mo, private rooms ${NAP.pricePrivate}/mo \u2014 financial assistance available for those who qualify.` },
+  { icon: HomeIcon, title: 'State-licensed for 18 residents', body: 'Small, six-bedroom homes \u2014 a real house with a handful of neighbors, never an institution.' },
   { icon: ShieldCheck, title: 'Insurance & Medicaid waiver', body: 'We streamline long-term care insurance and accept the Medicaid waiver.' },
 ];
 
@@ -25,17 +25,17 @@ const services = [
   {
     title: 'Assisted Living',
     path: '/assisted-living',
-    body: 'Help with daily living — medication management, meals, housekeeping, and around-the-clock support — while residents keep their independence and dignity.',
+    body: 'Help with daily living \u2014 medication management, meals, housekeeping, and around-the-clock support \u2014 while residents keep their independence and dignity.',
   },
   {
     title: 'Memory Care',
     path: '/memory-care',
-    body: 'Specialized, compassionate support for dementia, Alzheimer’s, frontotemporal dementia, and Lewy Body Dementia in a calm, secure home setting.',
+    body: 'Specialized, compassionate support for dementia, Alzheimer\u2019s, frontotemporal dementia, and Lewy Body Dementia in a calm, secure home setting.',
   },
   {
     title: 'Respite Care',
     path: '/respite-care',
-    body: 'Short-term stays that give family caregivers a much-needed break — for a few days, a few weeks, or longer — with the same loving care.',
+    body: 'Short-term stays that give family caregivers a much-needed break \u2014 for a few days, a few weeks, or longer \u2014 with the same loving care.',
   },
 ];
 
@@ -46,11 +46,11 @@ const homeFaqs = [
   },
   {
     q: 'How much does it cost to live at Pine Haven?',
-    a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also streamline long-term care insurance and accept the Medicaid waiver. Call us at ${NAP.phone} for a personalized quote based on your loved one’s level of care.`,
+    a: `Semi-private rooms start at ${NAP.priceSemiPrivate} a month and private rooms at ${NAP.pricePrivate} a month, with financial assistance available for those who qualify. We also streamline long-term care insurance and accept the Medicaid waiver. Call us at ${NAP.phone} for a personalized quote based on your loved one\u2019s level of care.`,
   },
   {
     q: 'What types of care does Pine Haven provide?',
-    a: 'We provide assisted living, memory care for dementia and Alzheimer’s, and short-term respite care — all within small, six-bedroom residential homes with a registered nurse and LPNs on staff.',
+    a: 'We provide assisted living, memory care for dementia and Alzheimer\u2019s, and short-term respite care \u2014 all within small, six-bedroom residential homes with a registered nurse and LPNs on staff.',
   },
   {
     q: 'Can we tour the home before deciding?',
@@ -62,8 +62,8 @@ const HomePage = () => {
   return (
     <>
       <MetaTags
-        title={NAP.name}
-        description={`Pine Haven Assisted Living in Hemlock, MI offers assisted living, memory care, and respite care in warm, six-bedroom homes — with a registered nurse on staff, home-cooked meals, and on-site companion animals. Serving Saginaw, Midland, and Bay City. Rent from ${NAP.priceFrom}/mo.`}
+        title="Pine Haven Assisted Living \u2014 Small Home Care in Hemlock, MI"
+        description={`Pine Haven Assisted Living in Hemlock, MI offers assisted living, memory care, and respite care in warm, six-bedroom homes \u2014 with a registered nurse on staff, home-cooked meals, and on-site companion animals. Serving Saginaw, Midland, and Bay City. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={faqSchema(homeFaqs)}
       />
       <Header />
@@ -85,7 +85,7 @@ const HomePage = () => {
                 Care that makes a difference in Hemlock, MI
               </h1>
               <p className="text-lg md:text-xl text-secondary-foreground/90 leading-relaxed mb-8">
-                Pine Haven is a small, family-owned assisted living and memory care home where your loved one is known by name — with a registered nurse and LPNs on staff, home-cooked meals, and even alpacas in the yard.
+                Pine Haven is a small, family-owned assisted living and memory care home where your loved one is known by name \u2014 with a registered nurse and LPNs on staff, home-cooked meals, and even alpacas in the yard.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/contact">
@@ -109,7 +109,7 @@ const HomePage = () => {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why families choose Pine Haven</h2>
               <p className="text-base md:text-lg text-muted-foreground">
-                We&rsquo;re not a big facility. We&rsquo;re a home — and it shows in everything we do.
+                We&rsquo;re not a big facility. We&rsquo;re a home \u2014 and it shows in everything we do.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,10 +144,10 @@ const HomePage = () => {
                 <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">About Pine Haven</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">A real home, not an institution</h2>
                 <p className="text-base md:text-lg text-muted-foreground mb-4">
-                  Tucked into a beautiful, quiet country setting just outside Saginaw, Pine Haven is built around a simple idea: older adults deserve to live well, happy, and safe — with as much independence as possible and all the support they need.
+                  Tucked into a beautiful, quiet country setting just outside Saginaw, Pine Haven is built around a simple idea: older adults deserve to live well, happy, and safe \u2014 with as much independence as possible and all the support they need.
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground mb-6">
-                  Our six-bedroom homes mean your loved one is never lost in a crowd. Staff and residents genuinely know each other. There are home-cooked meals, familiar faces, and yes — alpacas, a llama, sheep, goats, and chickens to brighten every day.
+                  Our six-bedroom homes mean your loved one is never lost in a crowd. Staff and residents genuinely know each other. There are home-cooked meals, familiar faces, and yes \u2014 alpacas, a llama, sheep, goats, and chickens to brighten every day.
                 </p>
                 <ul className="space-y-2">
                   {['Family-centered, person-first care', 'Registered nurse & LPNs on staff', 'Independence with the right level of support'].map((p) => (

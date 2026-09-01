@@ -6,6 +6,18 @@ Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the le
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
 
+## 2026-09-01 — 7 site changes (auto-applied by Visibility Analyst)
+
+Written automatically by the DMS portal at 01:25 UTC (task `24622353-ccf0-495b-a1f7-a4ae6264d127`). Shipped without human review — the portal classified these as low-risk. Every one is revertable from the linked task in the portal.
+
+- **SEO: replace MetaTags title prop with keyword-optimised brand title string** — `src/pages/HomePage.jsx`
+- **SEO: update metaTitle and metaDescription for assisted-living geo+query match** — `src/pages/AssistedLivingPage.jsx`
+- **SEO: add Saginaw County geo keywords to metaTitle, metaDescription, and lead paragraph** — `src/pages/MemoryCarePage.jsx`
+- **SEO: update /respite-care metaTitle (60 chars) and metaDescription (159 chars) for CTR** — `src/pages/RespiteCarePage.jsx`
+- **SEO: update /contact metaTitle and metaDescription for higher CTR** — `src/pages/ContactPage.jsx`
+- **SEO: update AREAS midland blurb to name Midland in key positions** — `src/App.jsx`
+- **Add pricing section + update metaTitle/metaDescription for assisted living cost SEO** — `src/pages/ServicesPage.jsx`
+
 ## Current state
 - **🚀 LAUNCHED on the real domain:** https://pinehavenassistedliving.com (2026-06-02). Apex serves the
   new site, zero WordPress markers, AI crawlers + Googlebot all return 200, canonical → apex.

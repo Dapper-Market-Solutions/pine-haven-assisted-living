@@ -5,15 +5,15 @@ import { NAP } from '@/lib/site';
 const MemoryCarePage = () => (
   <ServiceDetail
     serviceName="Memory Care"
-    metaTitle="Memory Care in Hemlock, MI — Dementia & Alzheimer's"
-    metaDescription="Dementia and Alzheimer's memory care at Pine Haven in Hemlock — serving Saginaw County, Midland, and Bay City. Small home, RN on staff, structured routines."
+    metaTitle="Memory Care near Saginaw County, MI — Dementia & Alzheimer's"
+    metaDescription="Specialized memory care for dementia & Alzheimer's near Saginaw County MI. Small six-bedroom home, RN on staff, consistent caregivers. Hemlock, MI."
     slug="/memory-care"
     eyebrow="Memory Care"
     title="Memory care, in a place that feels familiar"
     subtitle="Specialized support for dementia and Alzheimer's — in a small, calm home where routine, faces, and surroundings stay reassuringly the same."
     heroImage="/images/facility-3.jpg"
     lead={[
-      'Pine Haven provides specialized memory care for residents living with dementia, Alzheimer\u2019s disease, frontotemporal dementia, and Lewy Body Dementia. We meet each person where they are \u2014 with patience, structure, and genuine affection.',
+      'Pine Haven provides specialized memory care for residents living with dementia, Alzheimer\u2019s disease, frontotemporal dementia, and Lewy Body Dementia. We meet each person where they are \u2014 with patience, structure, and genuine affection. Families from Saginaw County, Midland, and Bay City choose Pine Haven for dementia and Alzheimer\u2019s care that a large institutional memory-care unit simply cannot replicate.',
       'For someone living with memory loss, environment is everything. A large, busy facility can be confusing and frightening. Our six-bedroom home offers the opposite: a quiet, consistent setting with the same caregivers, the same routines, and the same gentle faces every day.',
     ]}
     sections={[

@@ -89,8 +89,8 @@ const ContactPage = () => {
   return (
     <>
       <MetaTags
-        title="Contact Us & Schedule a Tour"
-        description={`Contact Pine Haven Assisted Living in Hemlock, MI. Call ${NAP.phone}, email us, or fill out the form to schedule a tour. Serving Saginaw, Midland, Bay City & Merrill.`}
+        title="Schedule a Tour — Pine Haven Assisted Living, Hemlock MI"
+        description="Schedule a tour or ask us a question. Call Pine Haven Assisted Living in Hemlock, MI at (989) 642-5761 or use our form. Serving Saginaw, Midland & Bay City."
         jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }])}
       />
       <Header />
@@ -99,7 +99,7 @@ const ContactPage = () => {
         <section className="py-16 md:py-20 bg-secondary text-secondary-foreground">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-4">Contact Pine Haven</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">Let’s find out if Pine Haven is right for your family</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">Let's find out if Pine Haven is right for your family</h1>
             <p className="text-lg md:text-xl text-secondary-foreground/90 leading-relaxed">
               Fill out the form below and one of our helpful staff will reach out to you shortly — or call us any time at{' '}
               <a href={NAP.phoneHref} className="font-semibold underline">{NAP.phone}</a>.
@@ -136,7 +136,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <Label htmlFor="message" className="text-foreground">How can we help you today? *</Label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="mt-1" placeholder="Tell us a little about your loved one and what you’re looking for." />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={5} className="mt-1" placeholder="Tell us a little about your loved one and what you're looking for." />
                 </div>
                 <div className="flex items-start gap-3">
                   <Checkbox id="consent" checked={consent} onCheckedChange={setConsent} className="mt-1" />

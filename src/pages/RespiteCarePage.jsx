@@ -5,8 +5,8 @@ import { NAP } from '@/lib/site';
 const RespiteCarePage = () => (
   <ServiceDetail
     serviceName="Respite Care"
-    metaTitle="Respite Care in Michigan — Short-Term Stays"
-    metaDescription="Short-term respite care at Pine Haven in Hemlock, Michigan gives family caregivers a break — for days or weeks. Personal care, meals, and an RN on staff."
+    metaTitle="Respite Care in Michigan — Short Stays at Pine Haven, Hemlock"
+    metaDescription="Short-term respite care in Michigan at Pine Haven, Hemlock — RN on staff, home-cooked meals, flexible stays from days to weeks. Give yourself a well-deserved break."
     slug="/respite-care"
     eyebrow="Respite Care"
     title="A break for you. Great care for them."
