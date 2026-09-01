@@ -90,7 +90,7 @@ const ContactPage = () => {
     <>
       <MetaTags
         title="Schedule a Tour — Pine Haven Assisted Living, Hemlock MI"
-        description="Schedule a tour or ask us a question. Call Pine Haven Assisted Living in Hemlock, MI at (989) 642-5761 or use our form. Serving Saginaw, Midland & Bay City."
+        description="Tour Pine Haven's small assisted living home in Hemlock, MI — 25 min from Saginaw. Our team is available 24/7. Call (989) 642-5761 or send us a message and we'll get back to you today."
         jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }])}
       />
       <Header />

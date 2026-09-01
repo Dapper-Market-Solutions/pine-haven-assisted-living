@@ -6,6 +6,13 @@ Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the le
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
 
+## 2026-09-01 — 2 site changes (auto-applied by Visibility Analyst)
+
+Written automatically by the DMS portal at 02:54 UTC (task `302fb56f-6648-4394-81a7-64995fc29086`). Shipped without human review — the portal classified these as low-risk. Every one is revertable from the linked task in the portal.
+
+- **Update /contact meta description for CTR improvement** — `src/pages/ContactPage.jsx`
+- **Add blog post URL for assisted-living-hemlock-michigan to sitemap** — `public/sitemap.xml`
+
 ## 2026-09-01 — 7 site changes (auto-applied by Visibility Analyst)
 
 Written automatically by the DMS portal at 01:25 UTC (task `24622353-ccf0-495b-a1f7-a4ae6264d127`). Shipped without human review — the portal classified these as low-risk. Every one is revertable from the linked task in the portal.
