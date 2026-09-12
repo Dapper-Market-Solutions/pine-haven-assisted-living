@@ -70,7 +70,7 @@ const PrivacyPolicyPage = () => {
                 <a href="https://consumer.ftc.gov/unwanted-calls-emails-texts" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">consumer.ftc.gov/unwanted-calls-emails-texts</a>.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">Telephone &amp; Text Communications</h2>
+              <h2 id="do-not-call" className="text-2xl font-bold text-foreground mb-4 mt-8">Telephone &amp; Text Communications</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 When you provide a phone number, you may receive calls or text messages related to your inquiry. Any such outreach complies with the Telephone Consumer Protection Act (TCPA) and the regulations of the FTC and FCC, including the{' '}
                 <a href="https://www.donotcall.gov" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">National Do-Not-Call Registry</a>. You may opt out of text messages at any time by replying STOP. To learn more about your rights regarding unwanted calls and texts, visit{' '}

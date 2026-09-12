@@ -145,3 +145,10 @@
 .post-content th, .post-content td { border: 1px solid hsl(var(--border)); padding: 0.625rem 0.875rem; text-align: left; }
 .post-content th { background: hsl(var(--muted)); font-weight: 700; }
 .post-content strong { color: hsl(var(--foreground)); }
+
+/* Anchor targets clear the sticky header — the footer's "Do Not Call" link
+   points at #do-not-call inside the Privacy Policy. Without this the browser
+   scrolls the heading underneath the header and the section looks missing. */
+[id] {
+  scroll-margin-top: 6rem;
+}

@@ -99,7 +99,7 @@ const Footer = () => {
             <Link to="/privacy" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">Privacy Policy</Link>
             <Link to="/cookies" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">Cookie Policy</Link>
             <Link to="/terms" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">Terms</Link>
-            <a href="https://consumer.ftc.gov/unwanted-calls-emails-texts" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">Do Not Call Registry</a>
+            <a href="/privacy#do-not-call" className="text-sm text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">Do Not Call</a>
           </div>
         </div>
       </div>
