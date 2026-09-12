@@ -28,10 +28,17 @@ const AccordionTrigger = React.forwardRef(({ className, children, ...props }, re
 ))
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
+// forceMount keeps the answer in the DOM at all times. Without it Radix
+// unmounts closed panels, so the prerendered HTML ships the questions and NONE
+// of the answers — invisible to every crawler that does not run JS, which is
+// most AI crawlers. That defeats the reason we write FAQ sections at all.
+// `data-[state=closed]:hidden` does the hiding instead; the collapse animation
+// is the price, and it is worth paying.
 const AccordionContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    forceMount
+    className="overflow-hidden text-sm data-[state=closed]:hidden data-[state=open]:animate-accordion-down"
     {...props}>
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
   </AccordionPrimitive.Content>
