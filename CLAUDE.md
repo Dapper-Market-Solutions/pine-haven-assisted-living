@@ -64,6 +64,8 @@ than §10's single-knob `brand.config.js`, so **searching for `#` finds nothing*
 
 ## Standing rules
 
+- **No `\uXXXX` escapes in `src/` — type the character.** `npm run build` fails on any (`scripts/check-escapes.mjs`, prebuild on source and postbuild on built HTML). The Visibility Analyst auto-apply introduced 84 of them in Aug 2026 and 16 painted raw on live pages; see STATUS 2026-09-17.
+
 - `git fetch && git pull --ff-only` before editing — Site Hygiene commits here automatically.
 - Update `STATUS.md` (append dated) and this file (edit in place) at the end of any session
   with durable changes.

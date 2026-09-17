@@ -1,10 +1,30 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
+**Last updated:** 2026-09-17 — raw `\u2014` escapes fixed on / and /services (DMS-T-0257); `check:escapes` now fails the build on any recurrence. Prior: 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
+
+## 2026-09-17 — Raw `\uXXXX` escapes were live on / and /services (DMS-T-0257)
+
+The client reported literal `\u2014` in body copy. Served HTML had 7 on the home page and 9 on
+/services, including the /services `<title>` and meta description (browser tab + Google snippet).
+**Nobody typed them.** Both batches came from the Visibility Analyst auto-apply commits `0308754`
+(2026-08-15, +27) and `e4167ad` (2026-08-31, +33): the analyst rewrote correct literal characters as
+`\u` escapes, e.g. `title="Our Services — …"` became `title="… \u2014 …"`. Escapes render fine inside
+JS string literals and paint raw in JSX attributes/text, so most of the 84 looked fine.
+
+Fix: every `\uXXXX` in `src/` replaced with the character itself (84 across 6 page files; source is
+now escape-free). Guard: `scripts/check-escapes.mjs` runs on `prebuild` (source) and `postbuild`
+(built HTML outside `<script>`) and fails the build, Vercel included — a failed deploy keeps the last
+good build serving, which beats shipping escapes. Verified: the old source fails the check (84), the
+fixed source passes, `dist/` has zero visible escapes. The analyst's writer in dms-portal
+(`api/_lib/site-edit-apply.js` / `visibility-fixgen.js`) is the root cause and is not fixed here.
+
+Still open from the same request: remove Memory Care (not accredited), expand the companion-animal
+list, 18 residents / 13 rooms wording, and a social follow prompt — all client-visible content
+decisions, held for Deepak.
 
 ## 2026-09-01 — 2 site changes (auto-applied by Visibility Analyst)
 

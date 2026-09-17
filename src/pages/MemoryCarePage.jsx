@@ -13,16 +13,16 @@ const MemoryCarePage = () => (
     subtitle="Specialized support for dementia and Alzheimer's — in a small, calm home where routine, faces, and surroundings stay reassuringly the same."
     heroImage="/images/facility-3.jpg"
     lead={[
-      'Pine Haven provides specialized memory care for residents living with dementia, Alzheimer\u2019s disease, frontotemporal dementia, and Lewy Body Dementia. We meet each person where they are \u2014 with patience, structure, and genuine affection. Families from Saginaw County, Midland, and Bay City choose Pine Haven for dementia and Alzheimer\u2019s care that a large institutional memory-care unit simply cannot replicate.',
+      'Pine Haven provides specialized memory care for residents living with dementia, Alzheimer’s disease, frontotemporal dementia, and Lewy Body Dementia. We meet each person where they are — with patience, structure, and genuine affection. Families from Saginaw County, Midland, and Bay City choose Pine Haven for dementia and Alzheimer’s care that a large institutional memory-care unit simply cannot replicate.',
       'For someone living with memory loss, environment is everything. A large, busy facility can be confusing and frightening. Our six-bedroom home offers the opposite: a quiet, consistent setting with the same caregivers, the same routines, and the same gentle faces every day.',
     ]}
     sections={[
       {
         heading: 'Care shaped around the person, not the diagnosis',
         image: '/images/facility-7.jpg',
-        imageAlt: 'Pine Haven\u2019s on-site alpacas, part of the home\u2019s calming environment',
+        imageAlt: 'Pine Haven’s on-site alpacas, part of the home’s calming environment',
         body: [
-          'No two people experience dementia the same way, so we don\u2019t treat them the same way. Our caregivers learn each resident\u2019s history, preferences, and the rhythms of their day, then build care around them \u2014 from how they like to be woken to which activities bring them comfort.',
+          'No two people experience dementia the same way, so we don’t treat them the same way. Our caregivers learn each resident’s history, preferences, and the rhythms of their day, then build care around them — from how they like to be woken to which activities bring them comfort.',
           'A registered nurse and LPNs on staff oversee medications and watch closely for the changes that matter in progressive conditions, coordinating with physicians and keeping families informed every step of the way.',
         ],
       },
@@ -30,14 +30,14 @@ const MemoryCarePage = () => (
         heading: 'A calm, secure environment that lowers anxiety',
         body: [
           'Predictability soothes. Familiar meals served at familiar times, a consistent daily structure, and a small, home-scale setting all work together to reduce the agitation and disorientation that come with memory loss.',
-          'Our companion animals play a real role here, too. Time spent with the alpacas, llama, sheep, goats, and chickens is calming and grounding \u2014 a simple, wordless source of joy that reaches residents even on harder days.',
+          'Our companion animals play a real role here, too. Time spent with the alpacas, llama, sheep, goats, and chickens is calming and grounding — a simple, wordless source of joy that reaches residents even on harder days.',
         ],
       },
     ]}
     amenities={{
       title: 'How we support residents with memory loss',
       items: [
-        'Care for Alzheimer\u2019s & all dementias',
+        'Care for Alzheimer’s & all dementias',
         'Frontotemporal & Lewy Body Dementia',
         'Consistent caregivers & daily routine',
         'Registered nurse & LPNs on staff',
@@ -54,15 +54,15 @@ const MemoryCarePage = () => (
     faqs={[
       {
         q: 'What types of memory loss does Pine Haven care for?',
-        a: 'We care for residents living with Alzheimer\u2019s disease and other forms of dementia, including frontotemporal dementia and Lewy Body Dementia. Reach out and we can talk through your loved one\u2019s specific needs and whether Pine Haven is the right fit.',
+        a: 'We care for residents living with Alzheimer’s disease and other forms of dementia, including frontotemporal dementia and Lewy Body Dementia. Reach out and we can talk through your loved one’s specific needs and whether Pine Haven is the right fit.',
       },
       {
         q: 'How is memory care different from regular assisted living?',
-        a: 'Memory care adds specialized support for the cognitive, behavioral, and safety needs that come with dementia \u2014 consistent routines, a secure and calm environment, trained caregivers, and close monitoring \u2014 on top of the everyday help assisted living provides.',
+        a: 'Memory care adds specialized support for the cognitive, behavioral, and safety needs that come with dementia — consistent routines, a secure and calm environment, trained caregivers, and close monitoring — on top of the everyday help assisted living provides.',
       },
       {
         q: 'Why is a small home better for someone with dementia?',
-        a: 'Large facilities can be overwhelming and disorienting for someone with memory loss. Pine Haven\u2019s six-bedroom homes keep the environment small, quiet, and consistent, with the same caregivers and routines each day \u2014 which helps reduce anxiety and confusion.',
+        a: 'Large facilities can be overwhelming and disorienting for someone with memory loss. Pine Haven’s six-bedroom homes keep the environment small, quiet, and consistent, with the same caregivers and routines each day — which helps reduce anxiety and confusion.',
       },
       {
         q: 'How much does memory care cost?',

@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Pine Haven Assisted Living \u2014 assisted living, memory care, and respite care in Hemlock, MI. Vite + React + Tailwind (shadcn/ui), SSG via vite-react-ssg, deployed to Vercel. Rebuilt from the legacy WordPress site to the DMS site-standard.",
+  "description": "Pine Haven Assisted Living — assisted living, memory care, and respite care in Hemlock, MI. Vite + React + Tailwind (shadcn/ui), SSG via vite-react-ssg, deployed to Vercel. Rebuilt from the legacy WordPress site to the DMS site-standard.",
   "scripts": {
     "dev": "vite-react-ssg dev",
-    "prebuild": "node scripts/build-sitemap.js",
+    "prebuild": "node scripts/build-sitemap.js && npm run check:escapes",
     "build": "vite-react-ssg build",
     "preview": "vite preview",
-    "build:sitemap": "node scripts/build-sitemap.js"
+    "build:sitemap": "node scripts/build-sitemap.js",
+    "postbuild": "node scripts/check-escapes.mjs --dist",
+    "check:escapes": "node scripts/check-escapes.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

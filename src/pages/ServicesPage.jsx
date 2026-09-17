@@ -14,21 +14,21 @@ const services = [
     icon: HeartHandshake,
     title: 'Assisted Living',
     path: '/assisted-living',
-    body: 'Private studios, home-cooked meals, medication management, and 24-hour support \u2014 with all the independence your loved one wants to keep.',
+    body: 'Private studios, home-cooked meals, medication management, and 24-hour support — with all the independence your loved one wants to keep.',
     points: ['Private studio apartments', 'Medication management by an RN', 'Three home-cooked meals daily'],
   },
   {
     icon: Brain,
     title: 'Memory Care',
     path: '/memory-care',
-    body: 'Specialized, compassionate care for dementia, Alzheimer\u2019s, frontotemporal dementia, and Lewy Body Dementia in a calm, secure home.',
+    body: 'Specialized, compassionate care for dementia, Alzheimer’s, frontotemporal dementia, and Lewy Body Dementia in a calm, secure home.',
     points: ['Consistent caregivers & routine', 'Calm, home-scale environment', 'Animal-assisted comfort'],
   },
   {
     icon: CalendarClock,
     title: 'Respite Care',
     path: '/respite-care',
-    body: 'Short-term stays that give family caregivers a break \u2014 for hours, days, or weeks \u2014 with the same warm care our residents enjoy.',
+    body: 'Short-term stays that give family caregivers a break — for hours, days, or weeks — with the same warm care our residents enjoy.',
     points: ['Flexible short-term stays', 'Full personal care & meals', 'A no-pressure way to try Pine Haven'],
   },
 ];
@@ -36,8 +36,8 @@ const services = [
 const ServicesPage = () => (
   <>
     <MetaTags
-      title="Assisted Living Cost &amp; Services \u2014 Pine Haven, Hemlock MI"
-      description="Pine Haven assisted living in Hemlock, MI starts at $3,500/month for semi-private and $3,900/month for private rooms \u2014 all-inclusive. Memory care &amp; respite also available. Accepts Michigan Medicaid HCBS waiver. Serving Saginaw, Midland &amp; Bay City."
+      title="Assisted Living Cost &amp; Services — Pine Haven, Hemlock MI"
+      description="Pine Haven assisted living in Hemlock, MI starts at $3,500/month for semi-private and $3,900/month for private rooms — all-inclusive. Memory care &amp; respite also available. Accepts Michigan Medicaid HCBS waiver. Serving Saginaw, Midland &amp; Bay City."
       jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }])}
     />
     <Header />
@@ -46,7 +46,7 @@ const ServicesPage = () => (
       <PageHero
         eyebrow="Assisted Living &amp; Respite Care"
         title="Exceptional senior care in Hemlock, MI"
-        subtitle="Helping older adults lead enriching, dignified lives \u2014 with the right level of support, in a home that feels like one."
+        subtitle="Helping older adults lead enriching, dignified lives — with the right level of support, in a home that feels like one."
         image="/images/facility-2.jpg"
       />
 
@@ -54,7 +54,7 @@ const ServicesPage = () => (
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">Our services</h2>
           <p className="text-lg text-muted-foreground">
-            Every person who comes to Pine Haven arrives with a different story and different needs. Our three core services let us meet your loved one exactly where they are \u2014 and adjust as those needs change over time.
+            Every person who comes to Pine Haven arrives with a different story and different needs. Our three core services let us meet your loved one exactly where they are — and adjust as those needs change over time.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ const ServicesPage = () => (
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Assisted living cost at Pine Haven</h2>
           <p className="text-lg text-muted-foreground mb-5">
-            Semi-private rooms at Pine Haven start at <strong className="text-foreground">$3,500&nbsp;per month</strong>, and private rooms start at <strong className="text-foreground">$3,900&nbsp;per month</strong>. Both options are all-inclusive \u2014 your monthly rate covers meals, personal care, medication management, utilities, housekeeping, laundry, and a full calendar of activities. There are no surprise add-on fees.
+            Semi-private rooms at Pine Haven start at <strong className="text-foreground">$3,500&nbsp;per month</strong>, and private rooms start at <strong className="text-foreground">$3,900&nbsp;per month</strong>. Both options are all-inclusive — your monthly rate covers meals, personal care, medication management, utilities, housekeeping, laundry, and a full calendar of activities. There are no surprise add-on fees.
           </p>
           <p className="text-lg text-muted-foreground">
             Pine Haven accepts the <strong className="text-foreground">Michigan Medicaid Home &amp; Community-Based Services (HCBS) waiver</strong> and works directly with most long-term care insurance plans to help simplify the payment process. Our team is happy to walk you through your options and help you understand what coverage may apply.{' '}
