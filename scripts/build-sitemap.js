@@ -38,7 +38,7 @@ const EXCLUDE = new Set(['thank-you'])
 // Deliberate, not derived — priorities encode what we want crawled first.
 const PRIORITY = [
   [/^\/$/, '1.0'],
-  [/^\/(services|assisted-living|memory-care|respite-care)$/, '0.9'],
+  [/^\/(services|assisted-living|respite-care)$/, '0.9'],
   [/^\/(contact|assisted-living-)/, '0.8'],
   [/^\/(gallery|blog)$/, '0.7'],
   [/^\/blog\//, '0.6'],

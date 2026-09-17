@@ -52,7 +52,6 @@ export const NAV = [
     name: 'Services',
     path: '/services',
     children: [
-      { name: 'Memory Care', path: '/memory-care' },
       { name: 'Assisted Living', path: '/assisted-living' },
       { name: 'Respite Care', path: '/respite-care' },
     ],
@@ -101,10 +100,10 @@ export const TESTIMONIALS = [
 
 // The differentiators that actually sell Pine Haven — used on Home + service pages.
 export const HIGHLIGHTS = [
-  { title: 'On-site companion animals', body: 'Alpacas, a llama, sheep, goats, and chickens that residents help care for and love.' },
+  { title: 'On-site companion animals', body: 'Alpacas, llamas, goats, sheep, chickens, turkeys, ducks, and guinea fowl that residents help care for and love.' },
   { title: 'Registered Nurse & LPNs on staff', body: 'A registered nurse and licensed practical nurses on site — not just visiting aides.' },
   { title: 'Home-cooked meals', body: 'Three fresh, made-from-scratch meals served family-style every day.' },
   { title: 'Rent from ' + NAP.priceFrom + '/mo', body: `Semi-private rooms ${NAP.priceSemiPrivate}/mo, private rooms ${NAP.pricePrivate}/mo — financial assistance available for those who qualify.` },
-  { title: 'State-licensed for 18 residents', body: 'Small, six-bedroom residential homes — a real house with a handful of neighbors, never an institution.' },
+  { title: 'State-licensed for 18 residents', body: 'Small, 13-bedroom residential homes — a real house with a handful of neighbors, never an institution.' },
   { title: 'Insurance & Medicaid waiver', body: 'We streamline long-term care insurance and accept the Medicaid waiver.' },
 ];

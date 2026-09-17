@@ -26,7 +26,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     },
     {
       q: `What kinds of senior care does Pine Haven offer ${city} families?`,
-      a: "We offer assisted living, memory care for dementia and Alzheimer’s, and short-term respite care, all within small six-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.",
+      a: "We offer assisted living and short-term respite care, all within small 13-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.",
     },
     {
       q: `How much does assisted living near ${city} cost at Pine Haven?`,
@@ -37,7 +37,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
   const schema = [
     serviceSchema({
       name: `Assisted Living serving ${city}, MI`,
-      description: `Assisted living, memory care, and respite care for ${city}, MI families at Pine Haven in nearby Hemlock.`,
+      description: `Assisted living and respite care for ${city}, MI families at Pine Haven in nearby Hemlock.`,
       slug,
     }),
     breadcrumbSchema([
@@ -51,8 +51,8 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
   return (
     <>
       <MetaTags
-        title={`Assisted Living & Memory Care Near ${city}, MI`}
-        description={`Assisted living, memory care, and respite care near ${city}, MI — at Pine Haven in Hemlock. Six-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
+        title={`Assisted Living & Respite Care Near ${city}, MI`}
+        description={`Assisted living and respite care near ${city}, MI — at Pine Haven in Hemlock. 13-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={schema}
       />
       <Header />
@@ -60,7 +60,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
       <main>
         <PageHero
           eyebrow={`Serving ${city}, MI`}
-          title={`Assisted living & memory care near ${city}`}
+          title={`Assisted living & respite care near ${city}`}
           subtitle={blurb}
           image="/images/home-1.jpg"
         />
@@ -68,7 +68,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
         <section className="py-16 md:py-20 bg-background">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-lg md:text-xl text-foreground leading-relaxed mb-5">
-              When a parent or spouse from {city} needs more care than home can provide, the last thing most families want is a big, impersonal facility. Pine Haven is the alternative: a real, six-bedroom home in the country, {distance} {city}, where your loved one is known by name.
+              When a parent or spouse from {city} needs more care than home can provide, the last thing most families want is a big, impersonal facility. Pine Haven is the alternative: a real, 13-bedroom home in the country, {distance} {city}, where your loved one is known by name.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               With a registered nurse and LPNs on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn&apos;t possible at larger places &mdash; all just a short drive from {city}.
@@ -82,7 +82,6 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { title: 'Assisted Living', path: '/assisted-living', body: 'Daily support with meals, medication, and personal care — independence intact.' },
-                { title: 'Memory Care', path: '/memory-care', body: "Specialized dementia and Alzheimer’s care in a calm, secure home setting." },
                 { title: 'Respite Care', path: '/respite-care', body: 'Short-term stays that give family caregivers a much-needed break.' },
               ].map((s) => (
                 <Link key={s.path} to={s.path} className="group bg-card rounded-2xl p-7 shadow-sm border border-border hover:shadow-lg hover:-translate-y-1 transition-all">
@@ -100,10 +99,10 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
             <h2 className="text-3xl font-bold text-foreground mb-6">Why {city} families choose Pine Haven</h2>
             <ul className="space-y-3">
               {[
-                'A small, six-bedroom home — never a crowded institution',
+                'A small, 13-bedroom home — never a crowded institution',
                 'Registered nurse & LPNs on staff for real clinical oversight',
                 'Home-cooked meals served family-style every day',
-                'On-site alpacas, a llama, sheep, goats, and chickens residents adore',
+                'On-site alpacas, llamas, goats, sheep, chickens, turkeys, ducks, and guinea fowl residents adore',
                 `Rent from ${NAP.priceFrom}/mo with financial assistance available`,
                 "A quiet country setting that’s still an easy drive for visits",
               ].map((p) => (

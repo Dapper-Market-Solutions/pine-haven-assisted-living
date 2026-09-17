@@ -28,14 +28,14 @@ const BlogIndexPage = () => (
   <>
     <MetaTags
       title="Senior Care Guides & News"
-      description="Practical guidance for Michigan families choosing assisted living, memory care, or respite care — from the team at Pine Haven in Hemlock."
+      description="Practical guidance for Michigan families choosing assisted living or respite care — from the team at Pine Haven in Hemlock."
       jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }])}
     />
     <Header />
     <PageHero
       eyebrow="Blog"
       title="Senior Care Guides & News"
-      subtitle="Straight answers for families weighing assisted living, memory care, and respite care in mid-Michigan."
+      subtitle="Straight answers for families weighing assisted living and respite care in mid-Michigan."
     />
 
     <section className="py-16 lg:py-24">
@@ -47,7 +47,7 @@ const BlogIndexPage = () => (
             </div>
             <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">Guides coming soon</h2>
             <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
-              We&rsquo;re putting together practical guides on choosing a home, what memory care
+              We&rsquo;re putting together practical guides on choosing a home, what respite care
               actually involves, and how families pay for care. Check back shortly — or call us
               and we&rsquo;ll answer your questions directly.
             </p>

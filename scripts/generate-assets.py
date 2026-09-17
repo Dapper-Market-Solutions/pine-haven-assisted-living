@@ -13,7 +13,7 @@ PINE_LIGHT = (63, 107, 84)     # gradient end
 CREAM = (243, 239, 228)        # warm cream — recolored mark + wordmark
 WORDMARK = "Pine Haven"
 SUB = "Assisted Living"
-TAGLINE = "Assisted Living · Memory Care · Hemlock, MI"
+TAGLINE = "Assisted Living · Respite Care · Hemlock, MI"
 
 
 def font(size, bold=True):

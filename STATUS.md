@@ -1,10 +1,40 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-09-17 — raw `\u2014` escapes fixed on / and /services (DMS-T-0257); `check:escapes` now fails the build on any recurrence. Prior: 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
+**Last updated:** 2026-09-17 (Memory Care removal, animal list, bedroom count, social CTA) — raw `\u2014` escapes fixed on / and /services (DMS-T-0257); `check:escapes` now fails the build on any recurrence. Prior: 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
+
+## 2026-09-17b — Memory Care removed site-wide; animal list, bedroom count, social CTA (DMS-T-0257)
+
+The rest of Jennifer's bug report, held from the escapes fix below pending confirmation. Deepak
+confirmed: remove Memory Care everywhere rather than reword it.
+
+- Memory Care is gone as a named service (not accredited for it). Deleted
+  `src/pages/MemoryCarePage.jsx` and its route; stripped it from header/footer nav, the
+  homepage/services/area-page service lists, the contact-form care-interest dropdown, every
+  related-services block, every meta description and JSON-LD Service/comment mention, `llms.txt`,
+  `site.webmanifest`, and the OG social-share card (`og-preview.jpg` had "Memory Care" baked into
+  the pixels via `generate-assets.py`'s TAGLINE constant; regenerated). `/memory-care` 301s to
+  `/assisted-living` in `vercel.json` rather than 404ing, since real leads had been landing on it
+  (inbound inquiries from Krisa Byrne and Grace Sch, Aug/Sept 2026, both "Interested In: Memory
+  Care"). Left untouched: the blog post's FAQ on suitability for Alzheimer's/dementia residents
+  within Assisted Living, since it never named "Memory Care" as a distinct service and doesn't
+  carry the accreditation claim. One phrase in that post ("a large campus with a memory care
+  unit") was reworded to drop the term.
+- Companion animals: client's corrected list (alpacas, llamas, goats, sheep, chickens, turkeys,
+  ducks, and guinea fowl) replacing the shorter list across every page, `site.js`, `llms.txt`,
+  and the one published blog post.
+- Facility size: "six-bedroom" changed to "13-bedroom" everywhere (16 occurrences across 9
+  files) per the client's corrected wording. The state-licensed-for-18-residents claim was
+  already correct and untouched.
+- Social CTA: added a short "Follow us on Facebook and Instagram for updates and photos" line
+  above the existing icon row in the footer (`src/components/Footer.jsx`) — the icons themselves
+  already existed, they just had no invitation text next to them.
+- Verified: full `npm run build` clean (14 pages, was 15 before the Memory Care page removal),
+  `check:escapes` passes, `public/sitemap.xml` regenerated with `/memory-care` gone and nothing
+  else changed, no "memory care" or "six-bedroom" string survives anywhere in `dist/`.
 
 ## 2026-09-17 — Raw `\uXXXX` escapes were live on / and /services (DMS-T-0257)
 

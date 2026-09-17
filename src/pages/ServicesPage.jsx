@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, HeartHandshake, Brain, CalendarClock, Check } from 'lucide-react';
+import { ArrowRight, HeartHandshake, CalendarClock, Check } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import MetaTags from '@/components/MetaTags.jsx';
@@ -18,13 +18,6 @@ const services = [
     points: ['Private studio apartments', 'Medication management by an RN', 'Three home-cooked meals daily'],
   },
   {
-    icon: Brain,
-    title: 'Memory Care',
-    path: '/memory-care',
-    body: 'Specialized, compassionate care for dementia, Alzheimer’s, frontotemporal dementia, and Lewy Body Dementia in a calm, secure home.',
-    points: ['Consistent caregivers & routine', 'Calm, home-scale environment', 'Animal-assisted comfort'],
-  },
-  {
     icon: CalendarClock,
     title: 'Respite Care',
     path: '/respite-care',
@@ -37,7 +30,7 @@ const ServicesPage = () => (
   <>
     <MetaTags
       title="Assisted Living Cost &amp; Services — Pine Haven, Hemlock MI"
-      description="Pine Haven assisted living in Hemlock, MI starts at $3,500/month for semi-private and $3,900/month for private rooms — all-inclusive. Memory care &amp; respite also available. Accepts Michigan Medicaid HCBS waiver. Serving Saginaw, Midland &amp; Bay City."
+      description="Pine Haven assisted living in Hemlock, MI starts at $3,500/month for semi-private and $3,900/month for private rooms — all-inclusive. Respite care also available. Accepts Michigan Medicaid HCBS waiver. Serving Saginaw, Midland &amp; Bay City."
       jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }])}
     />
     <Header />

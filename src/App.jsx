@@ -6,7 +6,6 @@ import CookieConsent from './components/CookieConsent.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import AssistedLivingPage from './pages/AssistedLivingPage.jsx';
-import MemoryCarePage from './pages/MemoryCarePage.jsx';
 import RespiteCarePage from './pages/RespiteCarePage.jsx';
 import GalleryPage from './pages/GalleryPage.jsx';
 import BlogIndexPage from '@/pages/BlogIndexPage.jsx';
@@ -45,7 +44,7 @@ const AREAS = {
     city: 'Midland',
     distance: 'a short drive south of',
     blurb:
-      'Midland families looking for an alternative to large assisted living facilities choose Pine Haven — a small six-bedroom home in Hemlock, a short drive south of Midland, with an RN on staff and home-cooked meals every day.',
+      'Midland families looking for an alternative to large assisted living facilities choose Pine Haven — a small 13-bedroom home in Hemlock, a short drive south of Midland, with an RN on staff and home-cooked meals every day.',
   },
   'bay-city': {
     city: 'Bay City',
@@ -63,7 +62,6 @@ export const routes = [
       { index: true, element: <HomePage /> },
       { path: 'services', element: <ServicesPage /> },
       { path: 'assisted-living', element: <AssistedLivingPage /> },
-      { path: 'memory-care', element: <MemoryCarePage /> },
       { path: 'respite-care', element: <RespiteCarePage /> },
       { path: 'gallery', element: <GalleryPage /> },
       { path: 'blog', element: <BlogIndexPage /> },

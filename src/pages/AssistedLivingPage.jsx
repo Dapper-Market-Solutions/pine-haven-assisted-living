@@ -6,7 +6,7 @@ const AssistedLivingPage = () => (
   <ServiceDetail
     serviceName="Assisted Living"
     metaTitle="Assisted Living in Hemlock, MI — Small Home, from $3,500/mo"
-    metaDescription="Assisted living in Hemlock, MI — small six-bedroom home, RN on staff, home-cooked meals, companion animals. Serving Saginaw, Midland & Bay City. From $3,500/mo."
+    metaDescription="Assisted living in Hemlock, MI — small 13-bedroom home, RN on staff, home-cooked meals, companion animals. Serving Saginaw, Midland & Bay City. From $3,500/mo."
     slug="/assisted-living"
     eyebrow="Assisted Living"
     title="Assisted living that feels like home"
@@ -14,7 +14,7 @@ const AssistedLivingPage = () => (
     heroImage="/images/facility-2.jpg"
     lead={[
       'Pine Haven’s assisted living gives older adults exactly as much help as they need — and not a bit of the independence they want to keep. Residents have their own private studios, share home-cooked meals, and have professional staff on hand 24 hours a day.',
-      'Because our homes have just six bedrooms, the ratio of care to residents is something a large facility simply can’t match. Our team knows every resident by name, knows how they take their coffee, and knows when something’s a little off.',
+      'Because our homes have just 13 bedrooms, the ratio of care to residents is something a large facility simply can’t match. Our team knows every resident by name, knows how they take their coffee, and knows when something’s a little off.',
     ]}
     sections={[
       {
@@ -32,7 +32,7 @@ const AssistedLivingPage = () => (
         imageAlt: 'Sun-filled gathering space at Pine Haven',
         body: [
           'Staying mentally, socially, and physically active is what keeps people well. Pine Haven plans daily activities, games, hobby programs, and Bible study, and our sun-filled courtyards and patios invite residents outdoors in good weather.',
-          'And then there are the alpacas. Our on-site companion animals — alpacas, a llama, sheep, goats, and chickens — give residents something to look forward to, someone to care for, and a daily dose of the calm that only animals seem to bring.',
+          'And then there are the alpacas. Our on-site companion animals — alpacas, llamas, goats, sheep, chickens, turkeys, ducks, and guinea fowl — give residents something to look forward to, someone to care for, and a daily dose of the calm that only animals seem to bring.',
         ],
       },
     ]}
@@ -72,7 +72,6 @@ const AssistedLivingPage = () => (
       },
     ]}
     related={[
-      { title: 'Memory Care', path: '/memory-care' },
       { title: 'Respite Care', path: '/respite-care' },
       { title: 'Photo Gallery', path: '/gallery' },
     ]}

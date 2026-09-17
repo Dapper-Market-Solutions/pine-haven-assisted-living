@@ -7,14 +7,15 @@
   (Saginaw County).
 - **Repo:** `Dapper-Market-Solutions/pine-haven-assisted-living` (SSH). Push to `main` → Vercel.
 - **Stack:** React 18 + Vite 7 + Tailwind 3 + **`vite-react-ssg`** + `react-helmet-async`.
-- **Shape:** 15 pages in `src/pages/*Page.jsx` (13 site pages + `BlogIndexPage` + `BlogPostPage`), 12 components,
+- **Shape:** 14 pages in `src/pages/*Page.jsx` (12 site pages + `BlogIndexPage` + `BlogPostPage`), 12 components,
   `src/lib/{site,schema,analytics,utils}.js`.
 - **SEO:** `<MetaTags>` (the DMS standard). Don't introduce a `useSEO` hook.
 
 ## What this site does and doesn't have
 
-- **Services:** Assisted Living, Memory Care, Respite Care — plus an `AreaPage` for local
-  service-area coverage and a Gallery.
+- **Services:** Assisted Living, Respite Care — plus an `AreaPage` for local service-area
+  coverage and a Gallery. **No Memory Care** (see Standing rules) — Pine Haven is not accredited
+  for it, so there is no `/memory-care` route; that path 301s to `/assisted-living`.
 - **Blog is live** at `/blog` and `/blog/:slug`, and the Weekly Blog Writer is **on** (2 posts
   a month). **`blog_auto_publish` is ON** — a drafted post commits straight to `main` and
   deploys without a human approving it, so the portal-side guards are the only thing between
@@ -65,6 +66,15 @@ than §10's single-knob `brand.config.js`, so **searching for `#` finds nothing*
 ## Standing rules
 
 - **No `\uXXXX` escapes in `src/` — type the character.** `npm run build` fails on any (`scripts/check-escapes.mjs`, prebuild on source and postbuild on built HTML). The Visibility Analyst auto-apply introduced 84 of them in Aug 2026 and 16 painted raw on live pages; see STATUS 2026-09-17.
+
+- **Never reintroduce "Memory Care" as a named service.** The client is not accredited for it
+  (Michigan LARA, Adult Foster Care license). Removed site-wide 2026-09-17 (page, nav, footer,
+  contact-form option, all meta/JSON-LD, `llms.txt`, the OG card, and every FAQ/blurb mention) —
+  see STATUS. It is fine to keep describing that residents with dementia/Alzheimer's are cared
+  for within Assisted Living (that copy already existed and doesn't claim accreditation); just
+  never call it "Memory Care" as a distinct offering, and don't resurrect `/memory-care` as a
+  route — it 301s to `/assisted-living`. Watch for the Weekly Blog Writer or Visibility Analyst
+  drifting this back in.
 
 - `git fetch && git pull --ff-only` before editing — Site Hygiene commits here automatically.
 - Update `STATUS.md` (append dated) and this file (edit in place) at the end of any session

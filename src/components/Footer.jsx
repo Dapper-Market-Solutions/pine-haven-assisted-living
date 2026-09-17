@@ -11,8 +11,13 @@ const Footer = () => {
           <div>
             <img src="/logo.png" alt={NAP.name} className="h-20 w-auto brightness-0 invert mb-4" width="1170" height="762" />
             <p className="text-sm text-secondary-foreground/80 leading-relaxed max-w-xs mb-5">
-              {NAP.tagline} A family-owned assisted living and memory care home in {NAP.city}, {NAP.stateLong} — 25 minutes from Saginaw.
+              {NAP.tagline} A family-owned assisted living home in {NAP.city}, {NAP.stateLong} — 25 minutes from Saginaw.
             </p>
+            {(SOCIALS.facebook || SOCIALS.instagram) && (
+              <p className="text-sm text-secondary-foreground/80 mb-3">
+                Follow us on Facebook and Instagram for updates and photos from around the home.
+              </p>
+            )}
             <div className="flex gap-3">
               {SOCIALS.facebook && (
                 <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Pine Haven on Facebook" className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
@@ -37,7 +42,6 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { name: 'Assisted Living', path: '/assisted-living' },
-                { name: 'Memory Care', path: '/memory-care' },
                 { name: 'Respite Care', path: '/respite-care' },
                 { name: 'Photo Gallery', path: '/gallery' },
                 { name: 'Contact & Tours', path: '/contact' },

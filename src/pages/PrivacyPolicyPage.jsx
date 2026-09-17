@@ -41,7 +41,7 @@ const PrivacyPolicyPage = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">How We Use Your Information</h2>
               <ul className="list-disc pl-6 text-muted-foreground mb-6 space-y-2">
                 <li>To respond to your inquiry and schedule tours or visits</li>
-                <li>To provide information about our assisted living, memory care, and respite care services</li>
+                <li>To provide information about our assisted living and respite care services</li>
                 <li>To follow up with you about your inquiry</li>
                 <li>To improve our website and the way we serve families</li>
               </ul>

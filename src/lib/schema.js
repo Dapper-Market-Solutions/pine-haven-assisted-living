@@ -18,7 +18,7 @@ const PROVIDER = {
   },
 };
 
-// Service schema for a single offering (Memory Care, Assisted Living, etc.).
+// Service schema for a single offering (Assisted Living, Respite Care, etc.).
 export function serviceSchema({ name, description, slug }) {
   return {
     '@context': 'https://schema.org',

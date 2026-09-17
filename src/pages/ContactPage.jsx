@@ -15,7 +15,7 @@ import { trackLead } from '@/lib/analytics';
 import { NAP } from '@/lib/site';
 import { breadcrumbSchema } from '@/lib/schema';
 
-const CARE_OPTIONS = ['Assisted Living', 'Memory Care', 'Respite Care', 'A tour / general question'];
+const CARE_OPTIONS = ['Assisted Living', 'Respite Care', 'A tour / general question'];
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
 
 const ContactPage = () => {

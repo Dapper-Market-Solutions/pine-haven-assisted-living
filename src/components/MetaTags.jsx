@@ -10,7 +10,7 @@ import { SITE_URL, NAP } from '@/lib/site';
 
 const MetaTags = ({
   title = NAP.name,
-  description = 'Family-owned assisted living, memory care, and respite care in Hemlock, Michigan — six-bedroom homes with a registered nurse on staff, home-cooked meals, and on-site companion animals.',
+  description = 'Family-owned assisted living and respite care in Hemlock, Michigan — 13-bedroom homes with a registered nurse on staff, home-cooked meals, and on-site companion animals.',
   image = `${SITE_URL}/og-preview.jpg`,
   url, // optional canonical override; defaults to the current route
   jsonLd = null,

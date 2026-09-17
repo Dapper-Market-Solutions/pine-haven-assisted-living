@@ -1,7 +1,7 @@
 # Pine Haven Assisted Living — Website
 
 Marketing site for [Pine Haven Assisted Living](https://pinehavenassistedliving.com) in Hemlock, MI —
-assisted living, memory care, and respite care. Rebuilt from the legacy WordPress site to the DMS
+assisted living and respite care. Rebuilt from the legacy WordPress site to the DMS
 site-standard.
 
 ## Stack
@@ -23,7 +23,7 @@ npm run preview  # serve the built dist/
 - `src/lib/site.js` — single source of truth (NAP, nav, gallery, testimonials, service areas)
 - `src/lib/schema.js` — JSON-LD builders
 - `src/pages/` — one file per route; `App.jsx` defines the route table
-- `src/components/ServiceDetail.jsx` — layout powering the 3 deep service pages
+- `src/components/ServiceDetail.jsx` — layout powering the deep service pages (Assisted Living, Respite Care)
 - `api/lead.js` + `api/_lib/notify.js` — contact form handler (Resend)
 - `public/` — robots.txt, sitemap.xml, llms.txt, brand assets, facility photos
 - `scripts/generate-assets.py` — regenerate favicon set + OG card

@@ -9,8 +9,8 @@ import FAQ from '@/components/FAQ.jsx';
 import CTASection from '@/components/CTASection.jsx';
 import { serviceSchema, faqSchema, breadcrumbSchema } from '@/lib/schema';
 
-// Data-driven layout for the deep service pages (Assisted Living, Memory Care,
-// Respite Care). Each page passes its own content; this enforces a consistent,
+// Data-driven layout for the deep service pages (Assisted Living, Respite
+// Care). Each page passes its own content; this enforces a consistent,
 // SEO-complete shape: direct-answer lead, body sections, amenity list, FAQ +
 // matching FAQPage schema, Service schema, and a BreadcrumbList.
 const ServiceDetail = ({

@@ -23,7 +23,7 @@ const RespiteCarePage = () => (
         imageAlt: 'Companion animals and warm surroundings at Pine Haven',
         body: [
           'Respite guests receive the full Pine Haven experience: personal care, light housekeeping, meal preparation, medication support, and help with shopping and daily tasks. A registered nurse and LPNs on staff oversee care, so even a short stay comes with real clinical oversight.',
-          'It’s also a wonderful, no-pressure way to experience Pine Haven first-hand. Many families use a respite stay to see how their loved one settles in before considering longer-term assisted living or memory care.',
+          'It’s also a wonderful, no-pressure way to experience Pine Haven first-hand. Many families use a respite stay to see how their loved one settles in before considering longer-term assisted living.',
         ],
       },
       {
@@ -62,7 +62,7 @@ const RespiteCarePage = () => (
       },
       {
         q: 'Can respite care help us decide about long-term care?',
-        a: 'Absolutely. Many families use a respite stay as a trial run — a low-pressure way to see how a loved one settles into Pine Haven before deciding on longer-term assisted living or memory care.',
+        a: 'Absolutely. Many families use a respite stay as a trial run — a low-pressure way to see how a loved one settles into Pine Haven before deciding on longer-term assisted living.',
       },
       {
         q: 'How do we arrange a respite stay?',
@@ -71,7 +71,6 @@ const RespiteCarePage = () => (
     ]}
     related={[
       { title: 'Assisted Living', path: '/assisted-living' },
-      { title: 'Memory Care', path: '/memory-care' },
       { title: 'Contact Us', path: '/contact' },
     ]}
     ctaTitle="Arrange a respite stay"
