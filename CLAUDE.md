@@ -9,15 +9,21 @@
 - **Stack:** React 18 + Vite 7 + Tailwind 3 + **`vite-react-ssg`** + `react-helmet-async`.
 - **Shape:** 14 pages in `src/pages/*Page.jsx` (12 site pages + `BlogIndexPage` + `BlogPostPage`), 12 components,
   `src/lib/{site,schema,analytics,utils}.js`.
-- **SEO:** `<MetaTags>` (the DMS standard). Don't introduce a `useSEO` hook.
+- **SEO:** `<MetaTags>` (the DMS standard). Don't introduce a `useSEO` hook. The homepage H1
+  is `A small assisted living home in Hemlock, Michigan` — the one query rooted at `/`; keep
+  "small", "home" and the Michigan location in it.
 
 ## What this site does and doesn't have
 
 - **Services:** Assisted Living, Respite Care — plus an `AreaPage` for local service-area
-  coverage and a Gallery. **No Memory Care** (see Standing rules) — Pine Haven is not accredited
+  coverage and a Gallery. `AreaPage`'s `Service` JSON-LD description is assembled from the copy
+  the page renders (hero title, distance FAQ, the `blurb` in `App.jsx`'s `AREAS`) — keep it
+  that way so schema never drifts from visible text. **No Memory Care** (see Standing rules) — Pine Haven is not accredited
   for it, so there is no `/memory-care` route; that path 301s to `/assisted-living`.
 - **Blog is live** at `/blog` and `/blog/:slug`, and the Weekly Blog Writer is **on** (2 posts
-  a month). **`blog_auto_publish` is ON** — a drafted post commits straight to `main` and
+  a month). **`vercel.json` must never carry a `/blog/:slug*` redirect** — Vercel's `:slug*`
+  matches zero segments, so such a rule swallows `/blog` itself as well as every post (the
+  launch-day WordPress rule did exactly that until 2026-09-21; see STATUS). **`blog_auto_publish` is ON** — a drafted post commits straight to `main` and
   deploys without a human approving it, so the portal-side guards are the only thing between
   the writer and the live site. The one that matters most here: a quote attributed to an
   outside named source with no link to it **holds the draft for review** instead of shipping

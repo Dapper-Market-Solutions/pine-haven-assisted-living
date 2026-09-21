@@ -1,10 +1,31 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-09-17 (Memory Care removal, animal list, bedroom count, social CTA) — raw `\u2014` escapes fixed on / and /services (DMS-T-0257); `check:escapes` now fails the build on any recurrence. Prior: 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
+**Last updated:** 2026-09-21 (blog unblocked — the launch-day `/blog/*` redirect was 308ing every post and `/blog` itself to `/`; homepage H1 carries the target query; area Service schema per-city). Prior: 2026-09-17 — Memory Care removal, animal list, bedroom count, social CTA; raw `\u2014` escapes fixed on / and /services (DMS-T-0257), `check:escapes` fails the build on any recurrence; 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
+
+## 2026-09-21 — Blog was unreachable for 3 weeks; H1 target query; per-city Service schema
+
+Visibility Analyst findings 95b11f06 / 676af804 (high), fb4da8da, 2beaeeb0 (low). Commit `1a71a1c`.
+
+- **`/blog/:slug*` → `/` redirect removed from `vercel.json`.** It was added at launch (2026-06-02)
+  to catch old WordPress post URLs, before the blog existed. Vercel's `:slug*` also matches zero
+  segments, so it 308'd **`/blog` itself** and every post to the homepage — the first auto-published
+  post (`assisted-living-hemlock-michigan`, 2026-08-30) sat in the sitemap for three weeks with its
+  prerendered HTML never reachable. Note that STATUS's own launch entry listed `/blog/*→/` as a
+  feature; nobody re-checked it when the blog shipped 2026-08. Old WP post URLs now 404 and beacon
+  to the DMS 404 loop, which is the intended path for dead inbound links.
+- **Homepage H1** `Care that makes a difference in Hemlock, MI` → `A small assisted living home in
+  Hemlock, Michigan` — the page's one target query, using only what the hero subtitle already said.
+  The subtitle drops its now-duplicate "small … assisted living home"; no new claims.
+- **Area pages' `Service` schema description** was one generic string for all three cities. It is
+  now built from what each page renders (hero title, distance FAQ, hero `blurb` from `AREAS` in
+  `App.jsx`), so it is city-specific and still matches visible copy.
+- Verified live at 15:06 UTC, first poll after push: `/blog` and `/blog/assisted-living-hemlock-michigan`
+  both 200 (were 308 → `/`), new H1 on `/`, per-city description on all three area pages.
+  `npm run build` clean, 15 pages, `check:escapes` passes.
 
 ## 2026-09-17b — Memory Care removed site-wide; animal list, bedroom count, social CTA (DMS-T-0257)
 
