@@ -77,10 +77,10 @@ const HomePage = () => {
             >
               <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-4">{NAP.tagline}</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Care that makes a difference in Hemlock, MI
+                A small assisted living home in Hemlock, Michigan
               </h1>
               <p className="text-lg md:text-xl text-secondary-foreground/90 leading-relaxed mb-8">
-                Pine Haven is a small, family-owned assisted living home where your loved one is known by name — with a registered nurse and LPNs on staff, home-cooked meals, and even alpacas in the yard.
+                Pine Haven is family-owned, and your loved one is known by name — with a registered nurse and LPNs on staff, home-cooked meals, and even alpacas in the yard.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/contact">

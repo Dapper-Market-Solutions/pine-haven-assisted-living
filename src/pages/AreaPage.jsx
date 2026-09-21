@@ -37,7 +37,8 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
   const schema = [
     serviceSchema({
       name: `Assisted Living serving ${city}, MI`,
-      description: `Assisted living and respite care for ${city}, MI families at Pine Haven in nearby Hemlock.`,
+      // Per-city, and only from copy this page renders: the hero title, the distance FAQ and the hero blurb.
+      description: `Assisted living and respite care near ${city}, MI at Pine Haven in Hemlock, ${distance} ${city}. ${blurb}`,
       slug,
     }),
     breadcrumbSchema([

@@ -29,11 +29,6 @@
       "source": "/memory-care",
       "destination": "/assisted-living",
       "permanent": true
-    },
-    {
-      "source": "/blog/:slug*",
-      "destination": "/",
-      "permanent": true
     }
   ],
   "rewrites": [
