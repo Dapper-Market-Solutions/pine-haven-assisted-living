@@ -1,10 +1,17 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-09-21 (blog unblocked — the launch-day `/blog/*` redirect was 308ing every post and `/blog` itself to `/`; homepage H1 carries the target query; area Service schema per-city). Prior: 2026-09-17 — Memory Care removal, animal list, bedroom count, social CTA; raw `\u2014` escapes fixed on / and /services (DMS-T-0257), `check:escapes` fails the build on any recurrence; 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
+**Last updated:** 2026-09-21 (blog unblocked — the launch-day `/blog/*` redirect was 308ing every post and `/blog` itself to `/`; homepage H1 carries the target query; area Service schema per-city). Prior: 2026-09-17 — Memory Care removal, animal list, bedroom count, social CTA; raw `—` escapes fixed on / and /services (DMS-T-0257), `check:escapes` fails the build on any recurrence; 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
+
+## 2026-09-21 — 2 site changes (approved by Deepak Dashairya)
+
+Written automatically by the DMS portal at 17:12 UTC (task `2e71a8a9-3784-4e79-8cbd-4f46f108ad91`). Reviewed and approved by a person before shipping.
+
+- **Blog: Respite Care for Dementia Caregivers in Saginaw County, Michigan** — `src/content/posts/respite-care-saginaw-county-michigan.json`
+- **Blog image: Respite Care for Dementia Caregivers in Saginaw County, Michigan** — `public/blog-images/respite-care-saginaw-county-michigan.jpg`
 
 ## 2026-09-21 — Blog was unreachable for 3 weeks; H1 target query; per-city Service schema
 
@@ -59,11 +66,11 @@ confirmed: remove Memory Care everywhere rather than reword it.
 
 ## 2026-09-17 — Raw `\uXXXX` escapes were live on / and /services (DMS-T-0257)
 
-The client reported literal `\u2014` in body copy. Served HTML had 7 on the home page and 9 on
+The client reported literal `—` in body copy. Served HTML had 7 on the home page and 9 on
 /services, including the /services `<title>` and meta description (browser tab + Google snippet).
 **Nobody typed them.** Both batches came from the Visibility Analyst auto-apply commits `0308754`
 (2026-08-15, +27) and `e4167ad` (2026-08-31, +33): the analyst rewrote correct literal characters as
-`\u` escapes, e.g. `title="Our Services — …"` became `title="… \u2014 …"`. Escapes render fine inside
+`\u` escapes, e.g. `title="Our Services — …"` became `title="… — …"`. Escapes render fine inside
 JS string literals and paint raw in JSX attributes/text, so most of the 84 looked fine.
 
 Fix: every `\uXXXX` in `src/` replaced with the character itself (84 across 6 page files; source is
