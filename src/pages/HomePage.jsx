@@ -57,7 +57,8 @@ const HomePage = () => {
   return (
     <>
       <MetaTags
-        title="Pine Haven Assisted Living — Small Home Care in Hemlock, MI"
+        title="Small Assisted Living Home in Hemlock, MI"
+        brand="Pine Haven"
         description={`Pine Haven Assisted Living in Hemlock, MI: assisted living and respite care in a small 13-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={faqSchema(homeFaqs)}
       />
