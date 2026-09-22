@@ -18,7 +18,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
   const faqs = [
     {
       q: `Does Pine Haven serve families from ${city}, MI?`,
-      a: `Yes. Pine Haven is located in Hemlock, ${distance} ${city}, and we proudly welcome residents and families from ${city} and the surrounding Tri-Cities area. Many of our residents come from ${city} and nearby communities.`,
+      a: `Yes. Pine Haven is located in Hemlock, ${distance} ${city}, and we proudly welcome residents and families from ${city} and the surrounding Tri-Cities area. Many of our residents come from ${city} and nearby communities, and ${city} families are welcome to visit any time.`,
     },
     {
       q: `How far is Pine Haven from ${city}?`,
@@ -26,7 +26,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     },
     {
       q: `What kinds of senior care does Pine Haven offer ${city} families?`,
-      a: "We offer assisted living and short-term respite care, all within small 13-bedroom homes with a registered nurse and LPNs on staff and home-cooked meals.",
+      a: `We offer ${city} families assisted living and short-term respite care, all within a small 13-bedroom home with a registered nurse and LPNs on staff and home-cooked meals.`,
     },
     {
       q: `How much does assisted living near ${city} cost at Pine Haven?`,
@@ -34,17 +34,20 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
     },
   ];
 
+  // The H1. Area pages always start it with the typed query, "Assisted living near {City}, MI".
+  const heroTitle = `Assisted living near ${city}, MI in a small country home`;
+
   const schema = [
     serviceSchema({
       name: `Assisted Living serving ${city}, MI`,
       // Per-city, and only from copy this page renders: the hero title, the distance FAQ and the hero blurb.
-      description: `Assisted living and respite care near ${city}, MI at Pine Haven in Hemlock, ${distance} ${city}. ${blurb}`,
+      description: `${heroTitle}. Pine Haven is in Hemlock, ${distance} ${city}. ${blurb}`,
       slug,
     }),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Services', path: '/services' },
-      { name: `${city} Assisted Living`, path: slug },
+      { name: `Assisted Living near ${city}`, path: slug },
     ]),
     faqSchema(faqs),
   ];
@@ -52,8 +55,9 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
   return (
     <>
       <MetaTags
-        title={`Assisted Living & Respite Care Near ${city}, MI`}
-        description={`Assisted living and respite care near ${city}, MI — at Pine Haven in Hemlock. 13-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
+        title={`Assisted Living near ${city}, MI, from ${NAP.priceFrom}`}
+        brand="Pine Haven"
+        description={`Assisted living near ${city}, MI: Pine Haven is a small 13-bedroom home in Hemlock, MI with an RN and LPNs on staff and home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={schema}
       />
       <Header />
@@ -61,7 +65,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
       <main>
         <PageHero
           eyebrow={`Serving ${city}, MI`}
-          title={`Assisted living & respite care near ${city}`}
+          title={heroTitle}
           subtitle={blurb}
           image="/images/home-1.jpg"
         />
@@ -69,7 +73,7 @@ const AreaPage = ({ city, distance, blurb, slug }) => {
         <section className="py-16 md:py-20 bg-background">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-lg md:text-xl text-foreground leading-relaxed mb-5">
-              When a parent or spouse from {city} needs more care than home can provide, the last thing most families want is a big, impersonal facility. Pine Haven is the alternative: a real, 13-bedroom home in the country, {distance} {city}, where your loved one is known by name.
+              When a parent or spouse in {city} needs more care than home can provide, most {city} families do not want a big, impersonal facility. Pine Haven is the alternative: a real 13-bedroom home in the country in Hemlock, {distance} {city}, where your loved one is known by name.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               With a registered nurse and LPNs on staff, home-cooked meals, on-site companion animals, and around-the-clock support, we deliver the kind of attentive, personal care that simply isn&apos;t possible at larger places &mdash; all just a short drive from {city}.

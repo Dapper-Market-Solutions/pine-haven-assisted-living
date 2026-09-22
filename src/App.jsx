@@ -38,7 +38,7 @@ const AREAS = {
     city: 'Saginaw',
     distance: 'about 25 minutes west of',
     blurb:
-      'Saginaw families choose Pine Haven for the small-home alternative to large institutional facilities — a real house in the country, just a short drive away.',
+      'Saginaw families choose Pine Haven for the small-home alternative to large institutional facilities: a 13-bedroom home in the country in Hemlock, about 25 minutes west of Saginaw, with a registered nurse and LPNs on staff. Pricing is all-inclusive, from $3,500 a month, and we accept the Michigan Medicaid waiver.',
   },
   midland: {
     city: 'Midland',
@@ -50,7 +50,7 @@ const AREAS = {
     city: 'Bay City',
     distance: 'a comfortable drive from',
     blurb:
-      'Bay City families trust Pine Haven for personal, attentive care in a quiet country setting — never a crowded facility where a loved one becomes a room number.',
+      'Bay City families trust Pine Haven for personal, attentive care in a quiet country setting in Hemlock, a comfortable drive from Bay City, never a crowded facility where a loved one becomes a room number.',
   },
 };
 

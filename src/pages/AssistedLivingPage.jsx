@@ -5,15 +5,16 @@ import { NAP } from '@/lib/site';
 const AssistedLivingPage = () => (
   <ServiceDetail
     serviceName="Assisted Living"
-    metaTitle="Assisted Living in Hemlock, MI — Small Home, from $3,500/mo"
-    metaDescription="Assisted living in Hemlock, MI — small 13-bedroom home, RN on staff, home-cooked meals, companion animals. Serving Saginaw, Midland & Bay City. From $3,500/mo."
+    metaTitle="Assisted Living in Hemlock, MI from $3,500/mo"
+    metaBrand="Pine Haven"
+    metaDescription="Assisted living in Hemlock, MI, Saginaw County: a small 13-bedroom home with an RN and LPNs on staff, home-cooked meals and companion animals. From $3,500/mo."
     slug="/assisted-living"
     eyebrow="Assisted Living"
-    title="Assisted living that feels like home"
-    subtitle="Help with the everyday things, the freedom to keep living your way — in a real house just outside Saginaw."
+    title="Assisted living in Hemlock, MI that feels like home"
+    subtitle="Help with the everyday things, the freedom to keep living your way, in a real house in Hemlock, about 25 minutes west of Saginaw."
     heroImage="/images/facility-2.jpg"
     lead={[
-      'Pine Haven’s assisted living gives older adults exactly as much help as they need — and not a bit of the independence they want to keep. Residents have their own private studios, share home-cooked meals, and have professional staff on hand 24 hours a day.',
+      'Pine Haven’s assisted living in Hemlock, MI gives older adults from Hemlock and across Saginaw County exactly as much help as they need, and not a bit less of the independence they want to keep. Residents have their own private studios, share home-cooked meals, and have professional staff on hand 24 hours a day.',
       'Because our homes have just 13 bedrooms, the ratio of care to residents is something a large facility simply can’t match. Our team knows every resident by name, knows how they take their coffee, and knows when something’s a little off.',
     ]}
     sections={[
@@ -64,7 +65,11 @@ const AssistedLivingPage = () => (
       },
       {
         q: 'Does Pine Haven accept long-term care insurance or Medicaid?',
-        a: 'Yes. We work with families to streamline the long-term care insurance acceptance process, and we accept the Medicaid waiver, so coverage can be applied toward the cost of care.',
+        a: 'Yes. We work with families to streamline the long-term care insurance acceptance process. Pine Haven also accepts the Michigan Medicaid waiver, so eligible residents can apply that coverage toward the cost of assisted living.',
+      },
+      {
+        q: 'Is Pine Haven an adult foster care home?',
+        a: 'Yes. Pine Haven is licensed by the State of Michigan as an adult foster care home, which is the license category for small assisted living homes like ours. It means we are inspected and licensed for up to 18 residents, with a registered nurse and LPNs on staff.',
       },
       {
         q: 'Can residents bring their own furniture and belongings?',

@@ -58,7 +58,7 @@ const HomePage = () => {
     <>
       <MetaTags
         title="Pine Haven Assisted Living — Small Home Care in Hemlock, MI"
-        description={`Pine Haven Assisted Living in Hemlock, MI offers assisted living and respite care in warm, 13-bedroom homes — with a registered nurse on staff, home-cooked meals, and on-site companion animals. Serving Saginaw, Midland, and Bay City. Rent from ${NAP.priceFrom}/mo.`}
+        description={`Pine Haven Assisted Living in Hemlock, MI: assisted living and respite care in a small 13-bedroom home, RN on staff, home-cooked meals. Rent from ${NAP.priceFrom}/mo.`}
         jsonLd={faqSchema(homeFaqs)}
       />
       <Header />

@@ -29,8 +29,9 @@ const services = [
 const ServicesPage = () => (
   <>
     <MetaTags
-      title="Assisted Living Cost &amp; Services — Pine Haven, Hemlock MI"
-      description="Pine Haven assisted living in Hemlock, MI starts at $3,500/month for semi-private and $3,900/month for private rooms — all-inclusive. Respite care also available. Accepts Michigan Medicaid HCBS waiver. Serving Saginaw, Midland &amp; Bay City."
+      title="Assisted Living Cost &amp; Services in Michigan"
+      brand="Pine Haven"
+      description="Assisted living cost in Michigan, explained: Pine Haven in Hemlock, MI is $3,500/mo semi-private or $3,900/mo private, all-inclusive. Medicaid waiver accepted."
       jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }])}
     />
     <Header />
@@ -38,8 +39,8 @@ const ServicesPage = () => (
     <main>
       <PageHero
         eyebrow="Assisted Living &amp; Respite Care"
-        title="Exceptional senior care in Hemlock, MI"
-        subtitle="Helping older adults lead enriching, dignified lives — with the right level of support, in a home that feels like one."
+        title="What assisted living costs in Michigan at Pine Haven"
+        subtitle="Plain answers on assisted living cost in Michigan: semi-private rooms from $3,500 a month, private rooms from $3,900, all-inclusive, in a small home in Hemlock. Respite care too."
         image="/images/facility-2.jpg"
       />
 
@@ -47,7 +48,7 @@ const ServicesPage = () => (
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">Our services</h2>
           <p className="text-lg text-muted-foreground">
-            Every person who comes to Pine Haven arrives with a different story and different needs. Our three core services let us meet your loved one exactly where they are — and adjust as those needs change over time.
+            Every person who comes to Pine Haven arrives with a different story and different needs. Our two core services let us meet your loved one exactly where they are — and adjust as those needs change over time.
           </p>
         </div>
 
@@ -85,6 +86,17 @@ const ServicesPage = () => (
             <Link to="/contact" className="text-primary font-semibold hover:underline">
               Contact us to discuss pricing and availability &rarr;
             </Link>
+          </p>
+          <p className="text-lg text-muted-foreground mt-5">
+            Want the longer version? Read{' '}
+            <Link to="/blog/assisted-living-cost-michigan" className="text-primary font-semibold hover:underline">
+              how much assisted living costs in Michigan
+            </Link>{' '}
+            and{' '}
+            <Link to="/blog/how-to-pay-for-assisted-living-michigan" className="text-primary font-semibold hover:underline">
+              how families pay for it
+            </Link>
+            .
           </p>
         </div>
       </section>

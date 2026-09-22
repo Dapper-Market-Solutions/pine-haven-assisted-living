@@ -5,11 +5,12 @@ import { NAP } from '@/lib/site';
 const RespiteCarePage = () => (
   <ServiceDetail
     serviceName="Respite Care"
-    metaTitle="Respite Care in Michigan — Short Stays at Pine Haven, Hemlock"
-    metaDescription="Short-term respite care in Michigan at Pine Haven, Hemlock — RN on staff, home-cooked meals, flexible stays from days to weeks. Give yourself a well-deserved break."
+    metaTitle="Respite Care in Hemlock, MI: Short-Term Stays"
+    metaBrand="Pine Haven"
+    metaDescription="Respite care in Hemlock, MI for family caregivers in Saginaw, Midland and Bay City. Stays of any length, an RN and LPNs on staff, home-cooked meals. Call us."
     slug="/respite-care"
     eyebrow="Respite Care"
-    title="A break for you. Great care for them."
+    title="Respite care in Hemlock, MI: a break for you, great care for them"
     subtitle="Short-term stays that let family caregivers rest, travel, or recover — knowing their loved one is in warm, capable hands."
     heroImage="/images/facility-5.jpg"
     lead={[
@@ -24,6 +25,13 @@ const RespiteCarePage = () => (
         body: [
           'Respite guests receive the full Pine Haven experience: personal care, light housekeeping, meal preparation, medication support, and help with shopping and daily tasks. A registered nurse and LPNs on staff oversee care, so even a short stay comes with real clinical oversight.',
           'It’s also a wonderful, no-pressure way to experience Pine Haven first-hand. Many families use a respite stay to see how their loved one settles in before considering longer-term assisted living.',
+        ],
+      },
+      {
+        heading: 'Respite care for mid-Michigan families',
+        body: [
+          'Pine Haven sits in the country in Hemlock, about 25 minutes west of Saginaw, a short drive south of Midland, and a comfortable drive from Bay City. Family caregivers across rural mid-Michigan use us for stays of any length, from a few hours to a few weeks or longer, and your loved one gets the same RN-led care our long-term residents receive: a registered nurse and LPNs on staff, home-cooked meals, and staff on hand 24 hours a day.',
+          'Pine Haven accepts the Michigan Medicaid waiver, which may cover some respite services for qualifying residents. Ask us when you call and we will help you find out what applies to your family.',
         ],
       },
       {

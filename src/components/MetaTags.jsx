@@ -14,11 +14,15 @@ const MetaTags = ({
   image = `${SITE_URL}/og-preview.jpg`,
   url, // optional canonical override; defaults to the current route
   jsonLd = null,
+  // Suffix after the ' | '. The full name is 29 characters with the separator,
+  // which leaves no room for a query plus a price inside a 50-60 character
+  // title, so pages that need both pass brand="Pine Haven".
+  brand = NAP.name,
 }) => {
   const { pathname } = useLocation();
   const canonicalUrl = url || `${SITE_URL}${pathname === '/' ? '' : pathname}`;
 
-  const fullTitle = title === NAP.name ? `${NAP.name} | Assisted Living in Hemlock, MI` : `${title} | ${NAP.name}`;
+  const fullTitle = title === NAP.name ? `${NAP.name} | Assisted Living in Hemlock, MI` : `${title} | ${brand}`;
 
   const extraSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 

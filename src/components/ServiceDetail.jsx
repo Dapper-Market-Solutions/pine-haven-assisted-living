@@ -17,6 +17,7 @@ const ServiceDetail = ({
   serviceName,
   metaTitle,
   metaDescription,
+  metaBrand, // optional short title suffix, see MetaTags
   slug,
   eyebrow,
   title,
@@ -41,7 +42,7 @@ const ServiceDetail = ({
 
   return (
     <>
-      <MetaTags title={metaTitle} description={metaDescription} jsonLd={schema} />
+      <MetaTags title={metaTitle} description={metaDescription} brand={metaBrand} jsonLd={schema} />
       <Header />
 
       <main>
