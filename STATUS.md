@@ -8,6 +8,9 @@ SSG via `vite-react-ssg`, deployed to Vercel.
 
 ## 2026-09-21 — Target queries rebuilt; geo-signal, adult foster care FAQ, two posts
 
+**Addendum (same day, `8b5fac1`):** homepage `<title>` changed from the 88-char "Pine Haven Assisted Living — Small Home Care in Hemlock, MI | Pine Haven Assisted Living" to **"Small Assisted Living Home in Hemlock, MI | Pine Haven"** (54 chars) via the `brand` prop, carrying the two homepage targets. Verified live.
+
+
 Branch **`content/target-queries-2026-09`**, pushed for a Vercel preview and **not merged** (Deepak
 merges). Part of the fleet target-query run (DMS-T-0264); the per-site queries were chosen from this
 site's own Search Console data and approved by Deepak. The pattern in the data: the pages existed but
