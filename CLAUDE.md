@@ -4,14 +4,20 @@
 `STATUS.md` — read that first.
 
 - **Domain:** [pinehavenassistedliving.com](https://pinehavenassistedliving.com) · Hemlock, MI
-  (Saginaw County).
+  (Saginaw County). `www.` 308s to the bare domain: a Vercel domain setting, not a `vercel.json` rule.
 - **Repo:** `Dapper-Market-Solutions/pine-haven-assisted-living` (SSH). Push to `main` → Vercel.
 - **Stack:** React 18 + Vite 7 + Tailwind 3 + **`vite-react-ssg`** + `react-helmet-async`.
 - **Shape:** 14 pages in `src/pages/*Page.jsx` (12 site pages + `BlogIndexPage` + `BlogPostPage`), 12 components,
   `src/lib/{site,schema,analytics,utils}.js`.
 - **SEO:** `<MetaTags>` (the DMS standard). Don't introduce a `useSEO` hook. The homepage H1
   is `A small assisted living home in Hemlock, Michigan` — the one query rooted at `/`; keep
-  "small", "home" and the Michigan location in it.
+  "small", "home" and the Michigan location in it. Every other target-query page carries its typed
+  query in the H1: `Assisted living in Hemlock, MI …` on `/assisted-living`, `Respite care in
+  Hemlock, MI …` on `/respite-care`, `What assisted living costs in Michigan …` on `/services`, and
+  the area pages **always start the H1 with `Assisted living near {City}, MI`** (`heroTitle` in
+  `AreaPage.jsx`, which also opens the Service schema description). `MetaTags` takes an optional
+  `brand` prop (`"Pine Haven"`) for pages whose title needs a query plus a price inside 60 chars;
+  `ServiceDetail` passes it through as `metaBrand`.
 
 ## What this site does and doesn't have
 
@@ -21,7 +27,10 @@
   that way so schema never drifts from visible text. **No Memory Care** (see Standing rules) — Pine Haven is not accredited
   for it, so there is no `/memory-care` route; that path 301s to `/assisted-living`.
 - **Blog is live** at `/blog` and `/blog/:slug`, and the Weekly Blog Writer is **on** (2 posts
-  a month). **`vercel.json` must never carry a `/blog/:slug*` redirect** — Vercel's `:slug*`
+  a month). Two posts (`assisted-living-cost-michigan`, `how-to-pay-for-assisted-living-michigan`,
+  2026-09-21) were hand-written on a branch with the portal's `uncitedQuotes` / `uncitedStats`
+  guards run locally first, because auto-publish means anything on `main` is live unreviewed;
+  do the same for any hand-written post. **`vercel.json` must never carry a `/blog/:slug*` redirect** — Vercel's `:slug*`
   matches zero segments, so such a rule swallows `/blog` itself as well as every post (the
   launch-day WordPress rule did exactly that until 2026-09-21; see STATUS). **`blog_auto_publish` is ON** — a drafted post commits straight to `main` and
   deploys without a human approving it, so the portal-side guards are the only thing between
@@ -81,6 +90,12 @@ than §10's single-knob `brand.config.js`, so **searching for `#` finds nothing*
   never call it "Memory Care" as a distinct offering, and don't resurrect `/memory-care` as a
   route — it 301s to `/assisted-living`. Watch for the Weekly Blog Writer or Visibility Analyst
   drifting this back in.
+
+- **Pine Haven is a Michigan adult foster care licensed home; say so in those words.** It is
+  licensed by the State of Michigan for up to 18 residents, with a registered nurse and LPNs on
+  staff. **Never** describe it as a nursing home, skilled nursing or a medical facility. Naming a
+  nursing home as a contrast ("rather than the clinical environment of a nursing home") is fine.
+  Never name a competitor.
 
 - `git fetch && git pull --ff-only` before editing — Site Hygiene commits here automatically.
 - Update `STATUS.md` (append dated) and this file (edit in place) at the end of any session

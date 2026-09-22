@@ -1,10 +1,68 @@
 # Pine Haven Assisted Living — STATUS
 
-**Last updated:** 2026-09-21 (blog unblocked — the launch-day `/blog/*` redirect was 308ing every post and `/blog` itself to `/`; homepage H1 carries the target query; area Service schema per-city). Prior: 2026-09-17 — Memory Care removal, animal list, bedroom count, social CTA; raw `—` escapes fixed on / and /services (DMS-T-0257), `check:escapes` fails the build on any recurrence; 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
+**Last updated:** 2026-09-21b (target queries rebuilt on branch `content/target-queries-2026-09`: geo-signal H1s on /assisted-living, /respite-care, /services and the three area pages, adult foster care FAQ, two cost/payment posts with the guards run locally, www → bare-domain 308 in Vercel). Prior: 2026-09-21 (blog unblocked — the launch-day `/blog/*` redirect was 308ing every post and `/blog` itself to `/`; homepage H1 carries the target query; area Service schema per-city). Prior: 2026-09-17 — Memory Care removal, animal list, bedroom count, social CTA; raw `—` escapes fixed on / and /services (DMS-T-0257), `check:escapes` fails the build on any recurrence; 2026-08-09 — first blog draft corrected (fabricated quote); auto-publish turned ON.
 
 Marketing site for Pine Haven Assisted Living (Hemlock, MI). Rebuilt from the legacy WordPress
 site (pinehavenassistedliving.com) to the DMS site-standard. Vite + React + Tailwind (shadcn/ui),
 SSG via `vite-react-ssg`, deployed to Vercel.
+
+## 2026-09-21 — Target queries rebuilt; geo-signal, adult foster care FAQ, two posts
+
+Branch **`content/target-queries-2026-09`**, pushed for a Vercel preview and **not merged** (Deepak
+merges). Part of the fleet target-query run (DMS-T-0264); the per-site queries were chosen from this
+site's own Search Console data and approved by Deepak. The pattern in the data: the pages existed but
+none of them said the words people type. Saginaw was the priority, 225 impressions a year and the
+area page had never ranked.
+
+- **`/assisted-living`** (targets: assisted living hemlock mi, adult foster care homes near me,
+  medicaid assisted living michigan). H1 `Assisted living that feels like home` →
+  `Assisted living in Hemlock, MI that feels like home`; subtitle and lead now name Hemlock and
+  Saginaw County. New FAQ `Is Pine Haven an adult foster care home?` (client-approved wording,
+  American spelling). The Medicaid FAQ now says "Michigan Medicaid waiver" in the answer. FAQPage
+  schema follows the same array, so it matches.
+- **`/respite-care`** (respite care near me). H1 → `Respite care in Hemlock, MI: a break for you,
+  great care for them`. New body section "Respite care for mid-Michigan families" using only the
+  distance phrases already in `AREAS`, stays of any length, the same RN-led care. The sentence that
+  the Michigan Medicaid waiver may cover some respite services for qualifying residents is lifted
+  from the approved 2026-09-21 respite post (the site already said it there); the fetched MDHHS
+  MI Choice page lists respite services, so it is also true.
+- **Area pages** (assisted living saginaw/midland/bay city mi). H1 now literally starts with
+  `Assisted living near {City}, MI` (`heroTitle` in `AreaPage.jsx`, also the first clause of the
+  Service schema description, still assembled only from rendered copy). First paragraph and FAQ
+  answers use the city name three or more times. Saginaw's `blurb` in `App.jsx` gained the
+  specifics the site already states (25 minutes west of Saginaw, 13-bedroom home in Hemlock, RN and
+  LPNs, all-inclusive from $3,500, Michigan Medicaid waiver); Bay City's gained Hemlock and its
+  distance phrase. Breadcrumb renamed `{City} Assisted Living` → `Assisted Living near {City}`
+  because the old form spelled a competitor's name on the Saginaw page.
+- **`/services`** (assisted living cost michigan). H1 `Exceptional senior care in Hemlock, MI` →
+  `What assisted living costs in Michigan at Pine Haven`; subtitle carries the prices. "Our three
+  core services" → "two" (stale since Memory Care was removed). Cost section links the two new
+  posts.
+- **Homepage**: only the meta description (was 254 chars, now 156). H1 untouched. The `<title>`
+  is still 88 chars with the brand twice; left alone per the brief, worth its own fix.
+- **Titles**: `MetaTags` gained an optional `brand` prop (default `NAP.name`). The full-name suffix is
+  29 chars, which leaves no room for a query plus a price inside 60, so the pages above pass
+  `brand="Pine Haven"`. Every touched page is now 56–59 chars with suffix and 150–160 description.
+- **Two posts** in `src/content/posts/`, dated 2026-09-21, same JSON shape and author as the
+  existing ones, featured images reused from `public/images/`:
+  `assisted-living-cost-michigan` (1,176 words) and `how-to-pay-for-assisted-living-michigan`
+  (1,208 words). Every outside figure or quote is from a page fetched this session and linked in
+  the same paragraph: CareScout Cost of Care (2025 national median $6,200/mo), MDHHS MI Choice
+  Waiver Program page (definition, 1992 origin, statewide since 1998, respite in the service list),
+  LARA Adult Foster Care page ("does not license assisted or independent living facilities") and
+  LARA's statewide AFC search. No Michigan average was fetchable, so none is quoted. The portal's
+  `uncitedQuotes` / `uncitedStats` guards run locally on both: 0 findings. Written on a branch
+  because `blog_auto_publish` is ON and a post on `main` goes live unreviewed.
+- **www → bare domain**: Deepak approved a 308 from `www.pinehavenassistedliving.com` to the bare
+  domain today; it is a Vercel domain setting, not a `vercel.json` rule.
+- **Merrill**: no area page, decided. Merrill stays in the service-area lists and `areaServed`.
+- **Sitemap drift**: the committed `public/sitemap.xml` was missing the 2026-09-21 respite post,
+  because the portal's auto-publish commits the JSON without a rebuild (Vercel regenerates it, so
+  live was right). The rebuild here commits 17 URLs: 13 static + 4 posts.
+- Verified: `npm run build` clean (`✓ built`, `check:escapes` passes), `dist/` has 0 "memory
+  care", 0 "six-bedroom", 0 raw `\u20` escapes, 0 competitor names; "nursing home" appears only
+  as a contrast or inside the quoted state definition, never as self-description. Every FAQPage
+  question and answer on the touched pages is present in the visible text.
 
 ## 2026-09-21 — 2 site changes (approved by Deepak Dashairya)
 
